@@ -2,11 +2,11 @@
 
 踏雪寻仙的 AI Skill 集合 —— 用于 Claude Code 和其他 AI 编程助手的高效技能库。
 
-## 📦 项目简介
+## 项目简介
 
-本项目包含一系列精心设计的 AI Skill，用于增强 AI 助手在特定领域的能力。每个 Skill 都遵循**德鲁克的有效性原则**和**Anthropic 的迭代设计模式**，确保在正确的时机触发，提供高质量的输出。
+本项目包含一系列精心设计的 AI Skill，用于增强 AI 助手在特定领域的能力。每个 Skill 都遵循德鲁克的有效性原则和 Anthropic 的迭代设计模式，确保在正确的时机触发，提供高质量的输出。
 
-## 🎯 核心 Skill
+## 核心 Skill
 
 ### 1. 问题解决器 (ultimate-problem-solver)
 
@@ -68,7 +68,7 @@
 
 [查看详情](skills/skill设计师/SKILL.md)
 
-## 🏗️ 设计理念
+## 设计理念
 
 ### 德鲁克有效性原则
 
@@ -90,7 +90,7 @@ Skill 设计是迭代的，不是一次性完成的：
 
 每次迭代让 Skill 提升 20%，直到足够好。
 
-## 📁 目录结构
+## 目录结构
 
 ```
 taxue2025-skills/
@@ -105,11 +105,11 @@ taxue2025-skills/
 └── LICENSE                            # 许可证
 ```
 
-## 🚀 使用方法
+## 使用方法
 
 ### 在 Claude Code 中使用
 
-1. 将 Skill 文件复制到你的 `.trae/skills/` 目录
+1. 将 Skill 文件复制到你的 `~/.config/agents/skills/` 目录
 2. 重启 Claude Code 或等待 Skill 自动加载
 3. 使用触发词激活对应 Skill
 
@@ -133,7 +133,7 @@ taxue2025-skills/
 - 「创建新 Skill」
 - 「改进这个 Skill」
 
-## 🔄 版本更新
+## 版本更新
 
 | Skill | 版本 | 更新日期 | 主要更新 |
 |-------|------|----------|----------|
@@ -141,7 +141,7 @@ taxue2025-skills/
 | 哲思伙伴 | v1.0 | 2025-03 | 初始版本，六阶段对话流程 |
 | Skill 设计师 | v1.0 | 2025-03 | 初始版本，Drucker + Anthropic 设计框架 |
 
-## 📝 贡献指南
+## 贡献指南
 
 欢迎提交 Issue 和 PR！在贡献前请确保：
 
@@ -149,11 +149,11 @@ taxue2025-skills/
 2. 包含具体的使用示例
 3. 更新版本日志
 
-## 📄 许可证
+## 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
 
-## �� 关于作者
+## 关于作者
 
 **踏雪寻仙 (taxue2025)**
 
@@ -163,3 +163,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 ---
 
 > 「最好的 Skill 是在正确的时间加载，产生高质量的输出，并在每次使用中不断改进。」
+ENDOFFILE~
