@@ -105,13 +105,15 @@ taxue2025-skills/
 └── LICENSE                            # 许可证
 ```
 
+## 安装方法
+
+```bash
+npx skills add taxue2025-skills/taxue2025-skills
+```
+
 ## 使用方法
 
-### 在 Claude Code 中使用
-
-1. 将 Skill 文件复制到你的 `~/.config/agents/skills/` 目录
-2. 重启 Claude Code 或等待 Skill 自动加载
-3. 使用触发词激活对应 Skill
+安装后重启 Claude Code 或等待 Skill 自动加载，然后使用触发词激活对应 Skill。
 
 ### 触发词示例
 
@@ -163,4 +165,3 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 ---
 
 > 「最好的 Skill 是在正确的时间加载，产生高质量的输出，并在每次使用中不断改进。」
-ENDOFFILE~
