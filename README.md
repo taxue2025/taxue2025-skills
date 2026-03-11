@@ -107,8 +107,29 @@ taxue2025-skills/
 
 ## 安装方法
 
+使用 Vercel 的 skills CLI 工具安装：
+
 ```bash
-npx skills add taxue2025-skills/taxue2025-skills
+npx skills add taxue2025/taxue2025-skills
+```
+
+### 安装选项
+
+```bash
+# 查看本仓库包含的 skill 列表
+npx skills add taxue2025/taxue2025-skills --list
+
+# 安装特定 skill
+npx skills add taxue2025/taxue2025-skills --skill ultimate-problem-solver
+
+# 全局安装（所有项目可用）
+npx skills add taxue2025/taxue2025-skills -g
+
+# 安装到特定 Agent
+npx skills add taxue2025/taxue2025-skills -a claude-code
+
+# 非交互式安装（CI/CD 友好）
+npx skills add taxue2025/taxue2025-skills --all -y
 ```
 
 ## 使用方法
