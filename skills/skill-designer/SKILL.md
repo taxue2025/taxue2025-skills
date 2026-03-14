@@ -1,336 +1,107 @@
 ---
 name: skill-designer
-description: |
-  Design high-impact AI skills using Drucker's effectiveness + Anthropic's proven patterns.
-
-  Use when:
-  - "design a skill"
-  - "create a new skill"
-  - "improve this skill"
-  - "skill design"
-  - "skill designer"
-  - "设计 skill"
-  - "创建 skill"
-  - "改进 skill"
-
-  Use for:
-  - Encoding repeatable workflows
-  - Standardizing agent behavior
-  - Creating skill templates
-
-  Use other skills for:
-  - Complex problem analysis → expert-roundtable
-  - Direct problem solving → ultimate-problem-solver
-  - JD/skill design → skill-org
+description: Skill 设计师。快速评估一个 skill 值不值得做，然后帮你做出来。当用户说「设计一个 skill」、「这个功能值得做成 skill 吗」、「改进这个 skill」、「skill design」、「design a skill」、「improve this skill」时触发。专注于 skill 的价值评估和迭代优化。从零开始设计完整的 JD 或组织架构用 skill-org，复杂问题分析用 expert-roundtable。
 ---
 
 # Skill 设计师
 
-Design effective skills.
-
-**System**: Drucker's Effectiveness + Anthropic's Iteration
+设计有用的 skill，不设计没人用的 skill。
 
 ---
 
-## First Principles
+## 先问三个问题（Drucker 过滤）
 
-### 1. Drucker: Do the Right Thing
-```
-Skill Value = Importance × Quality × Frequency
-```
+动手之前，回答：
 
-Ask before designing:
-- [ ] Does this matter? (Drucker: "Would it affect results if not done?")
-- [ ] Can agent do this without skill? (Baseline test)
-- [ ] Will this be used 5+ times? (Reuse frequency)
+没有这个 skill，结果会变差吗？不会就不做。
 
-### 2. Anthropic: Iterate to Quality
+这个 skill 会被用5次以上吗？一次性任务不需要 skill。
 
-Skill design is **iterative**, not one-shot:
+Claude 直接回答不了这个问题吗？能直接回答就不需要 skill。
 
-```
-Draft → Test → Review → Improve → (repeat)
-        ↑________________________↓
-```
-
-Each iteration makes the skill 20% better. Stop when good enough.
-
-### 3. Claude: Structure for Understanding
-
-**Progressive Disclosure** (Anthropic pattern):
-
-| Level | When Loaded | Content |
-|-------|-------------|---------|
-| 1 (YAML) | Always | Triggers + core purpose |
-| 2 (Body) | When matched | Instructions + examples |
-| 3 (Refs) | On demand | Deep docs + templates |
+三个问题都过了，再往下走。
 
 ---
 
-## The Critical Few
+## Skill 的三层结构
 
-### Most Important: Description (Level 1)
+```
+Level 1（YAML frontmatter）：触发机制，始终加载
+Level 2（SKILL.md body）：执行指令，触发时加载，控制在 500 行以内
+Level 3（references/）：深度参考，按需读取
+```
 
-**Description decides if skill loads**. Get this right:
+最重要的是 Level 1。Description 写不好，skill 永远不会触发。
+
+---
+
+## Description 怎么写
+
+Description 决定 skill 什么时候加载。写法：
 
 ```yaml
----
-name: skill-name
 description: |
-  [What it does] + [When to use it]
+  [一句话说清楚这个 skill 做什么]
   
   Use when:
-  - "[trigger phrase 1]"
-  - "[trigger phrase 2]"
-  (10+ specific phrases)
+  - 「[触发词1]」
+  - 「[触发词2]」
+  （至少10个，覆盖精确表达和模糊表达）
   
   Use for:
-  - [Specific use case 1]
-  - [Specific use case 2]
+  - [具体场景1]
+  - [具体场景2]
   
-  Use other tools for:
-  - [Adjacent case 1] → [Alternative]
+  Use other skills for:
+  - [相邻场景] → [用哪个 skill]
+```
+
+写完之后测试：列出10个查询（5个应该触发，5个不应该），确认准确率超过90%。
+
 ---
-```
 
-**Test description** (Anthropic method):
-1. Write 10 test queries (5 should trigger, 5 should not)
-2. Check which trigger the skill
-3. Adjust until 90%+ accuracy
+## Skill Body 怎么写
 
-### Most Important: Examples (Level 2)
-
-**Examples teach better than rules**. Provide 2-4:
-
-```xml
-<examples>
-  <example>
-    <input>[Exact user request]</input>
-    <output>[Desired response]</output>
-  </example>
-</examples>
-```
-
-**Good example criteria** (Anthropic):
-- **Specific**: Real filenames, real data
-- **Realistic**: User actually says this
-- **Near-miss**: Edge case that could confuse
-
-### Most Important: Baseline (Drucker Validation)
-
-**Prove skill adds value**:
+Examples 比规则有效10倍。先写例子，再写规则。
 
 ```markdown
-## Baseline Test
+## 示例
 
-**Task**: [Same input]
-
-**Without skill**: [Output + quality score 1-5]
-**With skill**: [Output + quality score 1-5]
-**Improvement**: [Specific gain]
+输入：[真实的用户请求，要具体，带背景]
+输出：[理想的响应]
 ```
 
-If no clear improvement → Don't create the skill.
+好例子的三个标准：具体（有真实场景）、现实（用户真的会这样说）、边缘（覆盖容易混淆的情况）。
 
 ---
 
-## The Design Loop
+## 迭代循环
 
-### Step 1: Draft (10 min)
-
-**Minimal viable skill**:
-```yaml
----
-name: [name]
-description: |
-  [What + when]
-  
-  Use when:
-  - "[trigger]"
-  
-  Use for:
-  - [use case]
----
-
-# [Name]
-
-## Purpose
-[One sentence]
-
-## Examples
-[2 concrete cases]
-
-## Process
-[XML workflow if complex]
+```
+草稿 → 测试3个案例 → 用户看输出 → 改进 → 重复
 ```
 
-**Don't over-engineer**. Start simple, iterate.
+每轮迭代目标：让 skill 在测试案例上的通过率提升20%。
 
-### Step 2: Test (10 min)
-
-**Run 3 test cases**:
-1. **Happy path**: Ideal input
-2. **Edge case**: Boundary input  
-3. **Near-miss**: Similar but different
-
-**Check**:
-- [ ] Skill triggers correctly
-- [ ] Output matches expectation
-- [ ] Quality > 4/5
-
-### Step 3: Review (Critical - Anthropic Key Insight)
-
-**Show output to user before declaring done**:
-
-```markdown
-## Test Results
-
-**Case 1**: [Input] → [Output]
-**Case 2**: [Input] → [Output]
-**Case 3**: [Input] → [Output]
-
-Review questions:
-1. What meets expectations?
-2. What needs improvement? (Specific)
-3. Any missing scenarios?
-```
-
-**Collect feedback → Record → Iterate**
-
-### Step 4: Improve (10 min)
-
-**Improve based on feedback**:
-- False trigger? → Narrow description
-- Missed trigger? → Add phrases
-- Wrong output? → Add examples
-- Wrong format? → Clarify XML structure
-
-**Then**: Go to Step 2 (Test again)
-
-**Stop when**: 3 tests pass + user satisfied
+三个测试案例：理想输入（happy path）、边界输入（edge case）、近似输入（near-miss，容易触发但不应该触发的）。
 
 ---
 
-## Design Patterns
+## 常见问题
 
-Choose based on problem:
-
-| Pattern | Problem | Test |
-|---------|---------|------|
-| **Specialist** | Deep expertise | "Does this require domain knowledge?" |
-| **Coordinator** | Multi-step | "Does this have handoffs between steps?" |
-| **Transformer** | Format conversion | "Is this input → output mapping?" |
-| **Advisor** | Recommendation | "Is this choosing between options?" |
+| 问题 | 症状 | 修法 |
+|------|------|------|
+| 触发太宽 | 不相关的请求也触发 | 缩窄 description，加「Use other skills for」 |
+| 触发太窄 | 明显应该触发但没触发 | 补充触发词，覆盖模糊表达 |
+| 输出格式不对 | 结构乱 | 加具体的输出模板或示例 |
+| 什么都想做 | Skill 越来越大 | 拆分，每个 skill 只做一件事 |
 
 ---
 
-## Anti-Patterns
+## 与 skill-org 的分工
 
-| Pattern | Symptom | Fix |
-|---------|---------|-----|
-| **Kitchen Sink** | Does everything | Split, use parameters |
-| **Black Box** | No progress visibility | Add state tracking |
-| **Crystal Ball** | Assumes unknown info | Request explicitly |
-| **Permafrost** | Never updated | Design for iteration |
+skill-org 负责从目的出发，设计完整的组织架构和 JD，然后把 JD 编译成 skill 文件。
 
----
+skill-designer 负责快速评估和迭代已有 skill，专注于触发精度和输出质量。
 
-## Example
-
-```yaml
----
-name: data-analyst
-description: |
-  Analyze datasets to extract insights and recommendations.
-  
-  Use when:
-  - "analyze this data"
-  - "what insights from this spreadsheet"
-  - "help me understand these numbers"
-  
-  Use for:
-  - Trend identification
-  - Statistical summaries
-  - Actionable recommendations
-  
-  Use other tools for:
-  - Data visualization → Use chart-generator
-  - Predictive modeling → Use ml-predictor
----
-
-# Data Analyst
-
-## Purpose
-Transform raw data into actionable insights.
-
-## Process
-
-<workflow>
-  <step>Explore: Load → Stats → Quality check</step>
-  <step>Analyze: Apply methods per question type</step>
-  <step>Synthesize: Key findings + confidence</step>
-  <step>Recommend: 2-3 specific actions</step>
-</workflow>
-
-## Examples
-
-### Example 1: Sales Trend
-**Input**: "Q1-Q4 sales trend?"
-**Process**: YoY growth + seasonality
-**Output**: Executive summary with 3 recommendations
-
-### Example 2: Churn Analysis
-**Input**: "Why are customers leaving?"
-**Process**: Cohort analysis + feature correlation
-**Output**: Root causes + intervention plan
-
-## Constraints
-
-- Request raw data when possible
-- Flag small samples (n<30)
-- Distinguish correlation/causation
-- Express uncertainty
-```
-
----
-
-## Quick Checklist
-
-**Before**:
-- [ ] Passes Drucker's 3 questions
-- [ ] Baseline shows clear gap
-- [ ] Pattern selected
-
-**Draft**:
-- [ ] Description with 5+ triggers
-- [ ] 2-4 concrete examples
-- [ ] XML structure if complex
-
-**Test**:
-- [ ] 3 cases (happy/edge/near-miss)
-- [ ] 90%+ trigger accuracy
-- [ ] Quality > 4/5
-
-**Review**:
-- [ ] User seen output
-- [ ] Feedback recorded
-- [ ] Improvements made
-
-**Iterate**: Until 3 tests pass.
-
----
-
-## Philosophy
-
-> "The best skill is one that loads at the right time, produces quality output, 
-> and improves with each use." — Anthropic + Drucker
-
-**Design for**:
-- Right problem (Drucker)
-- Right time (Description accuracy)
-- Right way (Iteration)
-
-**Avoid**:
-- Perfect first draft
-- Complex evals
-- Design without testing
+有现成的 skill 需要改进用这里。从零设计一套 Agent 分工体系用 skill-org。
