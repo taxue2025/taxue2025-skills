@@ -50,7 +50,7 @@
 - 与问题解决器的智能边界
 - 安全边界和转介机制
 
-[查看详情](skills/哲思伙伴/SKILL.md)
+[查看详情](skills/philosophical-companion/SKILL.md)
 
 ---
 
@@ -70,7 +70,7 @@
 - 四种设计模式（专家/协调者/转换器/顾问）
 - 基线测试验证价值
 
-[查看详情](skills/skill设计师/SKILL.md)
+[查看详情](skills/skill-designer/SKILL.md)
 
 ---
 
@@ -227,9 +227,9 @@ taxue2025-skills/
 ├── skills/
 │   ├── ultimate-problem-solver/       # 问题解决器
 │   │   └── SKILL.md
-│   ├── 哲思伙伴/                       # 哲思伙伴
+│   ├── philosophical-companion/       # 哲思伙伴
 │   │   └── SKILL.md
-│   ├── skill设计师/                    # Skill 设计师
+│   ├── skill-designer/                 # Skill 设计师
 │   │   └── SKILL.md
 │   ├── expert-roundtable/             # 多专家圆桌讨论
 │   │   └── SKILL.md

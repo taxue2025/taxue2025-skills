@@ -50,7 +50,7 @@ A deep conversation partner that helps you find accurate names for vague feeling
 - Intelligent boundaries with Ultimate Problem Solver
 - Safety boundaries and referral mechanisms
 
-[View Details](skills/哲思伙伴/SKILL.md)
+[View Details](skills/philosophical-companion/SKILL.md)
 
 ---
 
@@ -70,7 +70,7 @@ High-impact AI Skill design framework based on Drucker's effectiveness + Anthrop
 - Four design patterns (Expert/Coordinator/Converter/Advisor)
 - Baseline testing for value validation
 
-[View Details](skills/skill设计师/SKILL.md)
+[View Details](skills/skill-designer/SKILL.md)
 
 ---
 
@@ -227,9 +227,9 @@ taxue2025-skills/
 ├── skills/
 │   ├── ultimate-problem-solver/       # Ultimate Problem Solver
 │   │   └── SKILL.md
-│   ├── 哲思伙伴/                       # Philosophical Companion
+│   ├── philosophical-companion/       # Philosophical Companion
 │   │   └── SKILL.md
-│   ├── skill设计师/                    # Skill Designer
+│   ├── skill-designer/                 # Skill Designer
 │   │   └── SKILL.md
 │   ├── expert-roundtable/             # Expert Roundtable
 │   │   └── SKILL.md
