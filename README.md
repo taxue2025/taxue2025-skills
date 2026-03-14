@@ -1,10 +1,14 @@
 # Taxue2025 Skills
 
+<p align="center">
+  <a href="./README.md">中文</a> | <a href="./README_EN.md">English</a>
+</p>
+
 踏雪寻仙的 AI Skill 集合 —— 用于 Claude Code 和其他 AI 编程助手的高效技能库。
 
 ## 项目简介
 
-本项目包含一系列精心设计的 AI Skill，用于增强 AI 助手在特定领域的能力。每个 Skill 都遵循德鲁克的有效性原则和 Anthropic 的迭代设计模式，确保在正确的时机触发，提供高质量的输出。
+本项目包含一系列精心设计的 AI Skill，用于增强 AI 助手在特定领域的能力。每个 Skill 都遵循**德鲁克的有效性原则**和**Anthropic 的迭代设计模式**，确保在正确的时机触发，提供高质量的输出。
 
 ## 核心 Skill
 
@@ -68,6 +72,44 @@
 
 [查看详情](skills/skill设计师/SKILL.md)
 
+---
+
+### 4. 多专家圆桌讨论 (expert-roundtable)
+
+激活多专家圆桌讨论系统，当用户面对复杂问题需要多维视角时立即触发。
+
+**适用场景**:
+- 战略决策、投资判断、组织管理
+- AI系统设计、内容方向、方案评审
+- skill设计评审、哲学/人生选择探索
+
+**核心特点**:
+- 四位常驻专家：德鲁克（管理）、芒格（逆向思维）、孙子（战略）、Ulrich（组织）
+- 五种讨论模式（单专家/圆桌收敛/结论接收/系统优化/开放式求真）
+- 轮空机制：专家自判断是否有独特观点
+- 责任归属明确的结论输出
+
+[查看详情](skills/expert-roundtable/SKILL.md)
+
+---
+
+### 5. 组织设计师 (skill-org)
+
+将目的编译成岗位，将岗位编译成skill，将解法编译成可复用资产。
+
+**适用场景**:
+- 设计新岗位、新skill、新Agent职责
+- 固化可重复工作流
+- 标准化 Agent 行为
+- 编译圆桌结论为可执行系统
+
+**核心特点**:
+- 六步编译流程（目的定义→交付标准→边界定义→协作界面→验收协议→迭代触发）
+- JD和skill双模板输出
+- 基于德鲁克目标管理和Ulrich组织能力建设
+
+[查看详情](skills/skill-org/SKILL.md)
+
 ## 设计理念
 
 ### 德鲁克有效性原则
@@ -90,22 +132,9 @@ Skill 设计是迭代的，不是一次性完成的：
 
 每次迭代让 Skill 提升 20%，直到足够好。
 
-## 目录结构
+## 快速开始
 
-```
-taxue2025-skills/
-├── README.md                          # 项目介绍
-├── skills/
-│   ├── ultimate-problem-solver/       # 问题解决器
-│   │   └── SKILL.md
-│   ├── 哲思伙伴/                       # 哲思伙伴
-│   │   └── SKILL.md
-│   └── skill设计师/                    # Skill 设计师
-│       └── SKILL.md
-└── LICENSE                            # 许可证
-```
-
-## 安装方法
+### 安装
 
 使用 Vercel 的 skills CLI 工具安装：
 
@@ -132,7 +161,7 @@ npx skills add taxue2025/taxue2025-skills -a claude-code
 npx skills add taxue2025/taxue2025-skills --all -y
 ```
 
-## 使用方法
+### 使用方法
 
 安装后重启 Claude Code 或等待 Skill 自动加载，然后使用触发词激活对应 Skill。
 
@@ -156,6 +185,59 @@ npx skills add taxue2025/taxue2025-skills --all -y
 - 「创建新 Skill」
 - 「改进这个 Skill」
 
+**多专家圆桌讨论**:
+- 「开圆桌」
+- 「让专家讨论」
+- 「多角度分析」
+- 「格鲁克怎么看」
+
+**组织设计师**:
+- 「设计一个岗位」
+- 「给 Agent 定职责」
+- 「拆分这个工作流」
+
+## Skill 协作关系
+
+```
+expert-roundtable（思考层）
+        ↓
+    skill-org（编译层）
+    /           \
+问题解决        JD/skill设计
+        ↓
+   哲思伙伴（深度对话）
+        ↓
+  skill设计师（设计框架）
+```
+
+- **复杂问题** → expert-roundtable 多角度分析
+- **需要固化** → skill-org 编译成可执行系统
+- **深度对话** → 哲思伙伴
+- **设计 skill** → skill设计师
+- **直接解决** → 问题解决器
+
+## 目录结构
+
+```
+taxue2025-skills/
+├── README.md                          # 中文介绍
+├── README_EN.md                       # English Introduction
+├── INSTALL.md                         # 安装指南
+├── INSTALL_EN.md                      # Installation Guide
+├── skills/
+│   ├── ultimate-problem-solver/       # 问题解决器
+│   │   └── SKILL.md
+│   ├── 哲思伙伴/                       # 哲思伙伴
+│   │   └── SKILL.md
+│   ├── skill设计师/                    # Skill 设计师
+│   │   └── SKILL.md
+│   ├── expert-roundtable/             # 多专家圆桌讨论
+│   │   └── SKILL.md
+│   └── skill-org/                     # 组织设计师
+│       └── SKILL.md
+└── LICENSE                            # 许可证
+```
+
 ## 版本更新
 
 | Skill | 版本 | 更新日期 | 主要更新 |
@@ -163,6 +245,8 @@ npx skills add taxue2025/taxue2025-skills --all -y
 | 问题解决器 | v5.1 | 2025-03 | 优化六要素输出结构，增强调试模式 |
 | 哲思伙伴 | v1.0 | 2025-03 | 初始版本，六阶段对话流程 |
 | Skill 设计师 | v1.0 | 2025-03 | 初始版本，Drucker + Anthropic 设计框架 |
+| 多专家圆桌讨论 | v1.0 | 2025-03 | 初始版本，五位专家协作系统 |
+| 组织设计师 | v1.0 | 2025-03 | 初始版本，六步编译流程 |
 
 ## 贡献指南
 
