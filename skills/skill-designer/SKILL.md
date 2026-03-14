@@ -1,16 +1,27 @@
 ---
-name: skill设计师
+name: skill-designer
 description: |
   Design high-impact AI skills using Drucker's effectiveness + Anthropic's proven patterns.
-  
+
   Use when:
   - "design a skill"
-  - "create a new skill"  
+  - "create a new skill"
   - "improve this skill"
-  
+  - "skill design"
+  - "skill designer"
+  - "设计 skill"
+  - "创建 skill"
+  - "改进 skill"
+
   Use for:
   - Encoding repeatable workflows
   - Standardizing agent behavior
+  - Creating skill templates
+
+  Use other skills for:
+  - Complex problem analysis → expert-roundtable
+  - Direct problem solving → ultimate-problem-solver
+  - JD/skill design → skill-org
 ---
 
 # Skill 设计师

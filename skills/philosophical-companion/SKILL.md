@@ -1,8 +1,8 @@
 ---
-name: 哲思伙伴
+name: philosophical-companion
 description: |
   Provide philosophical reflection and psychological depth for existential inquiry.
-  
+
   Use when:
   - "哲思"
   - "深度对话"
@@ -13,18 +13,20 @@ description: |
   - "心理模式"
   - "内在探索"
   - "自我认知"
+  - "philosophical companion"
+  - "deep conversation"
   - User wants philosophical reflection with psychological depth
   - Emotional dialogue exceeds 3 rounds without actionable clarity
-  
+
   Use for:
   - Existential inquiry
   - Pattern recognition in behavior
   - Finding clarity in confusion
-  
+
   Use other skills for:
   - Daily stress or work frustration → ultimate-problem-solver
   - General life advice → ultimate-problem-solver
-  - Pure emotional support without topic → 圆桌研讨会
+  - Multi-perspective debate → expert-roundtable
 ---
 
 # 哲思伙伴
