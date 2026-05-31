@@ -236,33 +236,6 @@ career → direction → resume → channel → interview → offer → onboard
 
 ---
 
-## 投资与数据
-
-### taxue-weread（微信读书）
-
-**触发**：「读书笔记」「微信读书」「阅读记录」
-
-**功能**：微信读书笔记管理、书评、阅读分析
-
-### taxue-jimin-citrus-method（基民柠檬投资法）
-
-**触发**：「基金投资」「基金诊断」「怎么买基金」
-
-**功能**：基金投资策略分析，基于基民柠檬方法论
-
-### taxue-peizhe-allocator-method（配置说资产配置）
-
-**触发**：「资产配置」「配置方案」「怎么分配资产」
-
-**功能**：资产配置方法论，基于配置说框架
-
-### taxue-style-replicator（风格复刻）
-
-**触发**：「复刻风格」「投资风格」「策略生成」
-
-**功能**：投资风格分析与策略复制
-
----
 
 ## 状态管理
 
@@ -288,7 +261,7 @@ career → direction → resume → channel → interview → offer → onboard
               ├── 需要解决 → solve
               ├── 需要拆解 → breakdown
               ├── 需要学习 → learn
-              ├── 需要创作 → content → material/weread
+              ├── 需要创作 → content → material
               ├── 需要洞察 → insight
               ├── 需要多视角 → roundtable
               ├── 情绪问题 → calm → solve/relate

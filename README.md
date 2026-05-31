@@ -115,14 +115,6 @@ npx skills add taxueseek/taxueskills -g --all
 | **taxue-skill** | Skill 工程 — 分析、优化、设计 Agent Skill |
 | **taxue-material** | 素材管理 — 积累、整理、检索创作素材 |
 
-### 投资与数据
-
-| Skill | 功能 |
-|-------|------|
-| **taxue-jimin-citrus-method** | 基民柠檬投资法 — 基金投资策略分析 |
-| **taxue-peizhe-allocator-method** | 配置说资产配置 — 资产配置方法论 |
-| **taxue-style-replicator** | 风格复刻 — 投资风格分析与策略生成 |
-| **taxue-weread** | 微信读书管理 — 读书笔记、书评、阅读分析 |
 
 ---
 

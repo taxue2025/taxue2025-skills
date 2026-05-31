@@ -37,10 +37,6 @@ description: |
 | 「继续上次」「恢复进度」「上次到哪了」「接着做」 | `taxue-save`（--restore） |
 | 「积累素材」「整理素材」「素材库」「管理素材」 | `taxue-material` |
 | 「分析我的skill」「优化skill」「skill设计」「怎么写skill」 | `taxue-skill` |
-| 「读书笔记」「微信读书」「阅读记录」「书评」 | `taxue-weread` |
-| 「基金投资」「基金诊断」「怎么买基金」「投资策略」 | `taxue-jimin-citrus-method` |
-| 「资产配置」「配置方案」「怎么分配资产」 | `taxue-peizhe-allocator-method` |
-| 「复刻风格」「投资风格」「策略生成」 | `taxue-style-replicator` |
 | 「职场失败」「被裁」「面试被拒」「重建信心」 | `taxue-career-fail` |
 
 路由时说一句话：**「明白了，这个交给 {skill 名称} 来处理。」**
@@ -68,16 +64,7 @@ description: |
 | `taxue-career-onboard` 适应了 | 复盘 → `taxue-career-fail`（如遇挫） |
 | `taxue-career-fail` 复盘完成 | 重新定位 → `taxue-career-direction` |
 | `taxue-content` 内容写完了 | 积累素材 → `taxue-material` |
-| `taxue-content` 需要激发灵感 | 阅读输入 → `taxue-weread` |
-| `taxue-material` 素材够了 | 创作内容 → `taxue-content` |
-| `taxue-speak` 练完了 | 实战沟通 → `taxue-relate` |
-| `taxue-save` 存档完成 | 继续解决 → `taxue-solve` 或 `taxue-breakdown` |
-| `taxue-save` 多次存档后 | 整理复盘，形成方法论 → `taxue-build` |
-| `taxue-build` 构建完成 | 使用 → 对应新 skill |
-| `taxue-career-onboard` 适应了 | 复盘 → `taxue-career-fail`（如遇挫） |
-| `taxue-career-fail` 复盘完成 | 重新定位 → `taxue-career-direction` |
-| `taxue-content` 内容写完了 | 积累素材 → `taxue-material` |
-| `taxue-content` 需要激发灵感 | 阅读输入 → `taxue-weread` |
+
 | `taxue-material` 素材够了 | 创作内容 → `taxue-content` |
 | `taxue-speak` 练完了 | 实战沟通 → `taxue-relate` |
 | `taxue-save` 存档完成 | 继续解决 → `taxue-solve` 或 `taxue-breakdown` |
@@ -103,8 +90,6 @@ description: |
 > - 说话不好 → 帮你练习表达
 > - 找工作 → 帮你规划职业路径
 > - 商业模式 → 帮你快速诊断
-> - 基金投资 → 帮你分析策略
-> - 资产配置 → 帮你设计方案
 > - 积累素材 → 帮你管理素材库
 >
 > 你的问题属于哪类？
@@ -152,4 +137,4 @@ description: |
 
 ---
 
-*taxue v2.5 — 完整路由表（26 skill） · 全流程衔接 · 格莱斯信号检测 · 2026-06*
+*taxue v2.5 — 完整路由表 · 全流程衔接 · 格莱斯信号检测 · 2026-06*
