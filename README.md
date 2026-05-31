@@ -8,9 +8,9 @@
 
 踏雪寻仙的问题解决系统。不是工具箱，是工作流。
 
-从 20+ 个实际场景中提炼方法论，做成 26 个 Skill，覆盖问题解决、学习、创作、情绪、关系、职业、商业、投资等全领域。
+从 20+ 个实际场景中提炼方法论，做成Skill，覆盖问题解决、学习、创作、情绪、关系、职业、商业等全领域。
 
-可在 Claude Code、Codex、Cursor、Trae Solo 等任意支持 Skill / System Prompt 的 Agent 上使用。
+可在 Claude Code、Codex、Cursor、Trae Solo 等任意支持 Skill 的 Agent 上使用。
 
 ---
 
