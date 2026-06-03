@@ -4,7 +4,11 @@
 
 踏雪问题解决系统。不是工具箱，是工作流——24 个 Skill 覆盖问题消解、任务拆解、学习方法、内容创作、本质洞察、情绪处理、关系沟通、商业判断、职业规划全流程。
 
-可在 Claude Code、Codex、Cursor 等任意支持 Skill 的 Agent 上使用。
+可在 Claude Code、Codex、Cursor、Grok Build 等任意支持 Skill 的 Agent 上使用。
+
+**最新更新：v2.7**
+
+**v2.7 更新**：入口架构重构。taxue 入口从 130 行瘦身至 35 行，删除格莱斯信号检测、流程衔接表、超出能力话术等 95 行冗余内容。入口纯路由化，推理轮次从 3-5 轮降至 1 轮，每次调用节省 30-50% 的入口处理时间。能力下沉至各子 Skill，输出质量不降级。
 
 ---
 
@@ -24,69 +28,102 @@
 
 ---
 
-## 你能用它做什么
+## 安装
 
-| 你的状态 | 输入 /taxue | 会得到 |
-|---------|------------|--------|
-| 卡住了，不知道怎么办 | 「我该怎么办」 | 消解漏斗验证问题，出方案 |
-| 事情太多无从下手 | 「帮我拆一下」 | 可执行的任务清单 |
-| 想学新东西 | 「怎么学XX」 | 四步内化学习路径 |
-| 要写内容 | 「帮我写一篇XX」 | 选题门禁 + 见感思行 + 质量诊断 |
-| 想看透本质 | 「XX 的本质是什么」 | 五步思维框架，穿透表象 |
-| 焦虑内耗 | 「我好焦虑」 | 情绪解码，找到具体问题 |
-| 关系冲突 | 「跟XX怎么谈」 | 利益结构分析 + 沟通脚本 |
-| 说话紧张 | 「我不敢开口」 | 微任务练习，四种说话类型 |
-| 找工作 | 「帮我看看简历」 | 完整职业路径，从方向到入职 |
-| 商业模式判断 | 「这个生意能做吗」 | 三问定生死 + 德鲁克四问 |
-| 问题重复出现 | 「每次都卡在这」 | 六步编译法，经验变 Skill |
+#### Claude Code
+
+```bash
+claude plugin marketplace add taxueseek/taxueskills
+claude plugin install taxue@taxue-skills
+```
+
+#### 通用安装方式（适用于 Codex / Claude Code / Cursor）
+
+```bash
+npx -y skills add taxueseek/taxueskills -g --all
+```
+
+#### Grok Build
+
+```bash
+npx -y skills add taxueseek/taxueskills -g --all
+```
+
+安装后 skill 文件在 `~/.claude/skills/` 目录下，每个子 Skill 一个独立目录。
 
 ---
 
-## 完整技能表（24 个）
+## 更新
+
+#### Claude Code 插件市场安装的用户
+
+```bash
+claude plugin marketplace update taxue-skills
+claude plugin update taxue@taxue-skills
+/reload-plugins
+```
+
+#### 通过 `npx skills add` 安装的用户
+
+重新运行一次同样的命令即可。安装和更新用的是同一条命令：
+
+```bash
+npx -y skills add taxueseek/taxueskills -g --all
+```
+
+#### 手动更新
+
+```bash
+cd ~/.claude/skills && git clone https://github.com/taxueseek/taxueskills.git temp-taxue && cp -r temp-taxue/taxue* . && rm -rf temp-taxue
+```
+
+---
+
+## 技能表（24 个）
 
 ### 核心解决层
 
-| Skill | 功能 | 触发示例 |
-|-------|------|---------|
-| **taxue** | 入口路由 | 「/taxue」 |
-| **taxue-solve** | 解法引擎 | 「怎么办」「卡住了」 |
-| **taxue-breakdown** | 任务拆解 | 「帮我拆一下」「事情太多」 |
-| **taxue-learn** | 学习方法 | 「怎么学」「学了记不住」 |
-| **taxue-content** | 内容创作 | 「写一篇」「帮我创作」 |
-| **taxue-insight** | 本质洞察 | 「本质是什么」「看透」 |
-| **taxue-roundtable** | 决策圆桌 | 「多角度看看」「开圆桌」 |
-| **taxue-build** | 系统构建 | 「固化流程」「写个skill」 |
+| 斜杠命令 | 功能 | 自然语言触发 |
+|---------|------|-------------|
+| `/taxue` | 主入口，自动路由 | 「/t」「卡住了」「迷茫」「纠结」 |
+| `/taxue-solve` | 解法引擎，5层消解漏斗 | 「怎么办」「卡住了」「帮我理一下思路」 |
+| `/taxue-breakdown` | 任务拆解，拆到最小执行单位 | 「帮我拆一下」「事情太多」「步骤」「排期」 |
+| `/taxue-learn` | 学习方法论，四步内化法 | 「怎么学」「怎么入门」「学了记不住」 |
+| `/taxue-content` | 内容创作，从选题到终稿 | 「写一篇」「帮我创作」「小红书」「公众号」 |
+| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 |
+| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 |
+| `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」「标准化」 |
 
 ### 深度场景层
 
-| Skill | 功能 | 触发示例 |
-|-------|------|---------|
-| **taxue-calm** | 情绪解码 | 「好焦虑」「内耗」「心态崩了」 |
-| **taxue-relate** | 关系沟通 | 「怎么谈」「冲突」「边界」 |
-| **taxue-speak** | 说话练习 | 「说话紧张」「汇报不流畅」 |
-| **taxue-business** | 商业判断 | 「这个生意能不能做」 |
+| 斜杠命令 | 功能 | 自然语言触发 |
+|---------|------|-------------|
+| `/taxue-calm` | 情绪解码，把情绪转化为问题 | 「好焦虑」「内耗」「心态崩了」「睡不着」 |
+| `/taxue-relate` | 关系沟通，利益结构分析 | 「怎么谈」「冲突」「谈判」「边界」 |
+| `/taxue-speak` | 说话练习，四种领地四套法则 | 「说话紧张」「汇报不流畅」「说不清楚」 |
+| `/taxue-business` | 商业判断，三问定生死 | 「这个生意能不能做」「商业模式」 |
 
 ### 职业发展层
 
-| Skill | 功能 |
-|-------|------|
-| **taxue-career** | 职场入口 |
-| **taxue-career-direction** | 方向诊断 |
-| **taxue-career-resume** | 简历/JD 诊断 |
-| **taxue-career-channel** | 渠道策略 |
-| **taxue-career-interview** | 面试/离职 |
-| **taxue-career-offer** | Offer 决策 |
-| **taxue-career-onboard** | 入职前 90 天 |
-| **taxue-career-fail** | 失败复盘 |
+| 斜杠命令 | 功能 |
+|---------|------|
+| `/taxue-career` | 职场入口，自动路由到职业子 Skill |
+| `/taxue-career-direction` | 方向诊断 |
+| `/taxue-career-resume` | 简历/JD 诊断 |
+| `/taxue-career-channel` | 渠道策略 |
+| `/taxue-career-interview` | 面试/离职 |
+| `/taxue-career-offer` | Offer 决策与薪资谈判 |
+| `/taxue-career-onboard` | 入职前 90 天生存指南 |
+| `/taxue-career-fail` | 失败复盘 |
 
 ### 工具与基建
 
-| Skill | 功能 |
-|-------|------|
-| **taxue-save** | 状态存档（进度/恢复/决策记录） |
-| **taxue-material** | 素材管理 |
-| **taxue-skill** | Skill 诊断 + 优化 + 自诊断 |
-| **taxue-upgrade** | 版本管理 |
+| 斜杠命令 | 功能 |
+|---------|------|
+| `/taxue-save` | 状态存档（进度/恢复/决策记录） |
+| `/taxue-material` | 素材管理 |
+| `/taxue-skill` 或 `/txs` | Skill 诊断 + 优化 + 自诊断 |
+| `/taxue-upgrade` | 版本管理，一键升级 |
 
 ---
 
@@ -108,12 +145,40 @@ career → direction → resume → channel → interview → offer → onboard
 
 ---
 
+## 单独使用子 Skill
+
+每个子 Skill 都可以**独立使用**，不需要经过 `/taxue` 入口。直接用斜杠命令或自然语言触发即可。
+
+**推荐场景：**
+
+- 你明确知道问题类型 → 直接用子 Skill，跳过入口路由，更快
+- 你在某个 Skill 工作流中 → 子 Skill 会自动推荐下一步，不需要回入口
+- 你只想用某一个功能 → 直接调用，不需要加载整个系统
+
+**示例：**
+
+```
+/taxue-solve 我想做副业但不知道做什么
+/taxue-insight 为什么大多数人努力了还是没有结果
+/taxue-calm 最近总是焦虑得睡不着
+/taxue-breakdown 帮我拆解这个月的目标
+/taxue-content 帮我写一篇关于AI时代职业选择的文章
+/taxue-business 这个社群项目能不能做
+/taxue-relate 怎么跟合伙人谈股权分配
+/taxue-speak 下周要做述职汇报，我紧张
+/taxue-career-resume 帮我看看这份简历
+/taxue-save 保存这次讨论的结论
+```
+
+---
+
 ## 设计哲学
 
 1. **先澄清，后解决**：80% 的纠结是因为问题本身有问题
 2. **够用就好**：追求当前最有效的一步，不追求完美
 3. **推动行动**：不说「你可以考虑」，说「第一步做 X」
 4. **能固化则不复述**：重复的问题写成 Skill
+5. **入口做减法**：入口只管路由，能力下沉到子 Skill
 
 | 哲学家 | 映射 |
 |--------|------|
@@ -126,33 +191,15 @@ career → direction → resume → channel → interview → offer → onboard
 
 ---
 
-## v2.7 升级说明
-
-相比 v2.6，v2.7 做了一次架构级瘦身：
-
-**入口纯路由化。** taxue 入口从 130 行砍到 35 行，删除格莱斯信号检测、流程衔接表、超出能力话术等 95 行。入口只做一件事：读路由表，匹配，路由，结束。
-
-**能力下沉。** 格莱斯信号检测已融入各子 Skill 的推理框架（taxue-solve 的情绪伪装检测、taxue-calm 的情绪解码、taxue-insight 的找反例）。流程衔接已由各子 Skill 的下游协作表覆盖。边界处理由各子 Skill 自行兜底。
-
-**速度提升。** 入口推理轮次从 3-5 轮降至 1 轮，每次调用节省 30-50% 的入口处理时间。
-
-**一句话**：v2.6 是「入口什么都能做」，v2.7 是「入口只做该做的事」。
-
----
-
-## v2.6 回顾
-
-相比 v2.5，v2.6 在三个方向上做了系统性提升：触发边界收窄、原创案例嵌入、自诊断支持。24 个 Skill 形成完整路由闭环。
-
----
-
-## 版本
+## 版本历史
 
 | 版本 | 更新 | 日期 |
 |------|------|------|
-| v2.7 | 入口纯路由化，能力下沉，入口瘦身 95 行 | 2026-06 |
+| v2.7 | 入口纯路由化，能力下沉，入口瘦身 95 行，推理轮次 3-5 → 1 | 2026-06 |
 | v2.6 | 触发边界、原创案例、条件路由、自诊断、统一语言规则 | 2026-06 |
 | v2.5 | 文档体系重构，完整技能表，工作流联动图 | 2026-06 |
+
+更完整的历史变更，见 [GitHub Releases](https://github.com/taxueseek/taxueskills/releases)。
 
 ---
 
