@@ -2,10 +2,7 @@
 name: taxue-insight
 description: |
   踏雪本质洞察。穿透表象，直指结构。
-  触发：本质是什么、底层逻辑、核心矛盾、第一性原理、看透、
-  为什么是这样、怎么看、如何看待、这个时代的
-
-  DO NOT use when：
+  触发：/taxue-insight、帮我看看本质、底层逻辑是什么（通过 /taxue 入口路由更高效）
   - 有具体问题要解决 → taxue-solve
   - 商业诊断 → taxue-business
   - 情绪/人生困惑 → `taxue-calm`

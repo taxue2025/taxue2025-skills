@@ -2,10 +2,7 @@
 name: taxue-career-resume
 description: |
   简历/JD引擎——求职者写简历、匹配JD；雇主写JD、筛选简历。
-  触发：简历、改简历、简历不通过、投了没回音、JD怎么写、筛选简历、
-  简历诊断、简历没回音、怎么优化简历
-
-  DO NOT use when：方向还不清晰 → taxue-career-direction
+  触发：/taxue-career-resume、帮我看看简历、简历投了没回音（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-resume：简历/JD引擎

@@ -2,10 +2,7 @@
 name: taxue-career-onboard
 description: |
   入职后前90天生存指南。拿到Offer不是终点，转正才是。
-  触发：入职、转正、新工作、试用期、前90天、新环境、适应、onboarding、
-  新团队、新公司、怎么融入
-
-  DO NOT use when：还没选好Offer → taxue-career-offer
+  触发：/taxue-career-onboard、刚入职怎么适应、试用期怎么过（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-onboard：入职前90天

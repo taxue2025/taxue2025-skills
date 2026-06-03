@@ -2,10 +2,7 @@
 name: taxue-career-channel
 description: |
   渠道策略——求职者选平台投递，雇主选平台招人。
-  触发：在哪投、怎么投、在哪招、招不到、投了没回音、哪个平台好、
-  招聘渠道、求职渠道、内推、猎头
-
-  DO NOT use when：简历还没改好 → taxue-career-resume
+  触发：/taxue-career-channel、在哪个平台投简历、怎么找内推（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-channel：渠道策略

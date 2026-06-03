@@ -2,10 +2,8 @@
 name: taxue-breakdown
 description: |
   踏雪任务拆解。从复杂目标中提取执行骨架，拆到可执行的最小单位。
-  触发：事情太多、怎么拆解、怎么安排、复杂任务、步骤、排期、计划、milestone、
-  无从下手、不知道从哪开始、目标太大、太模糊
-
-  DO NOT use when：
+  触发：/taxue-breakdown、事情太多从哪开始、帮我拆解任务（通过 /taxue 入口路由更高效）
+  边界：
   - 问题本身还没搞清楚 → taxue-solve
   - 商业模式策略 → taxue-business
 ---

@@ -2,10 +2,7 @@
 name: taxue-career-direction
 description: |
   职业方向诊断——求职者找方向，雇主定岗位画像。
-  触发：没方向、迷茫、转行、不知道找什么工作、职业规划、要招什么人、
-  岗位画像、招聘需求模糊、不知道自己能做什么
-
-  DO NOT use when：已有明确方向只需执行 → 其他 career 子 skill
+  触发：/taxue-career-direction、不知道找什么工作、职业方向很迷茫（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-direction：方向诊断

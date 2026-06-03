@@ -2,10 +2,7 @@
 name: taxue-career
 description: |
   踏雪招聘系统。像真实的招聘平台——默认你是求职者，也可以随时切换成HR/雇主视角。
-  触发：/taxue-career、找工作、求职、改简历、面试、Offer、离职、转行、入职、
-  招人、HR视角、被裁、面试被拒、投了没回音、求职失败
-
-  DO NOT use when：
+  触发：/taxue-career、帮我规划职业、找工作遇到问题（通过 /taxue 入口路由更高效）
   - 商业创业咨询 → taxue-business
   - 纯情绪问题 → taxue-calm
 ---

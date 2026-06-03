@@ -2,10 +2,7 @@
 name: taxue-material
 description: |
   踏雪素材库活化器。从个人创作资产库中检索并注入高质量素材。
-  触发：/素材、/弹药、/从素材库、用踏雪风格、踏雪风格的、
-  给我几个金句、踏雪风格的案例、调用核心资产、知识体系里的方法论
-
-  DO NOT use when：
+  触发：/taxue-material、帮我整理素材、调用素材库（通过 /taxue 入口路由更高效）
   - 内容创作本身 → taxue-content
   - 学习方法 → taxue-learn
 ---

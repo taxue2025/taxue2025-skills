@@ -2,11 +2,8 @@
 name: taxue-skill
 description: |
   Skill 工程工具箱——诊断、改造、优化、发布。
-  触发：/taxue-skill、/txs、改进这个skill、优化skill、token消耗太大、
-  skill太慢、skill改造、帮我看看这个skill、skill诊断、skill体检、
-  skill重构、skill触发不准确、提升skill质量
-
-  DO NOT use when：
+  触发：/taxue-skill、/txs、skill优化、skill诊断、帮我看看这个skill（通过 /taxue 入口路由更高效）
+  边界：
   - 从零创建全新 skill → taxue-build
 ---
 
@@ -25,7 +22,7 @@ description: |
 | **诊断** | 「帮我看看这个skill」 | 分析问题，不改 |
 | **优化** | 「token消耗太大」「太慢」 | 减少冗余，提升效率 |
 | **触发优化** | 「skill触发不准确」 | 重写 description 和触发词 |
-| **边界优化** | 「skill做了不该做的事」 | 收窄边界，明确 DO NOT |
+| **边界优化** | 「skill做了不该做的事」 | 收窄边界，明确边界 |
 | **重构** | 「skill太复杂」 | 拆分/合并/简化 |
 
 ---
@@ -33,7 +30,7 @@ description: |
 ## 诊断维度
 
 1. **触发率**：description 是否覆盖足够多的触发场景？
-2. **边界清晰度**：DO NOT use when 是否明确？
+2. **边界清晰度**：边界声明是否明确？
 3. **token 效率**：有没有冗余内容？
 4. **路由完整性**：下游协作是否覆盖？
 5. **流程清晰度**：步骤是否可执行？

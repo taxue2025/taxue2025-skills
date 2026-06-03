@@ -2,10 +2,7 @@
 name: taxue-roundtable
 description: |
   踏雪多视角碰撞。多个视角同时看同一个问题，暴露你一个人想不到的盲区。
-  触发：多角度看看、从几个方面分析、碰一碰、辩论一下、开圆桌、
-  巴菲特怎么看、德鲁克会怎么说、多角度分析、圆桌讨论
-
-  DO NOT use when：
+  触发：/taxue-roundtable、帮我多角度分析、不同视角怎么看（通过 /taxue 入口路由更高效）
   - 已经有明确方案只需要执行 → taxue-breakdown
   - 情绪问题 → taxue-calm
 ---

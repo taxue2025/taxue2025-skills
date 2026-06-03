@@ -2,10 +2,7 @@
 name: taxue-career-offer
 description: |
   Offer决策与薪资谈判——选Offer、谈薪资、离职决策。
-  触发：Offer、选Offer、谈薪资、薪资谈判、多个Offer怎么选、
-  要不要跳槽、薪资期望、怎么跟HR谈薪
-
-  DO NOT use when：还没拿到Offer → taxue-career-interview
+  触发：/taxue-career-offer、多个Offer怎么选、怎么跟HR谈薪资（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-offer：Offer决策与薪资谈判

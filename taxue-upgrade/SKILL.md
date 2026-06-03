@@ -2,10 +2,7 @@
 name: taxue-upgrade
 description: |
   升级 taxue 系列 skills 到最新版本。
-  触发：/upgrade、更新skill、升级、skill版本、检查更新、
-  我的skill是不是过时了、怎么更新到最新版
-
-  DO NOT use when：
+  触发：/taxue-upgrade、升级到最新版本、检查skill更新（通过 /taxue 入口路由更高效）
   - 想诊断/优化 skill 功能 → taxue-skill
 ---
 

@@ -2,10 +2,7 @@
 name: taxue-career-interview
 description: |
   面试/离职引擎——求职者面试、选Offer、离职；雇主面试候选人、定价、离职面谈。
-  触发：面试、Offer、谈薪资、离职、面试候选人、定价、离职面谈、
-  面试准备、面试慌、怎么谈薪、怎么离职、裸辞
-
-  DO NOT use when：渠道还没选好 → taxue-career-channel
+  触发：/taxue-career-interview、准备面试怎么做、面试总是挂怎么改（通过 /taxue 入口路由更高效）
 ---
 
 # taxue-career-interview：面试/离职引擎
