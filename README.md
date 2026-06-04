@@ -1,4 +1,4 @@
-# Taxue Skills 
+# TaxueSkills 
 
 > **把任何模糊的问题，变成可执行的行动。**
 
