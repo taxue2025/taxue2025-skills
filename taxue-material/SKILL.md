@@ -2,9 +2,7 @@
 name: taxue-material
 description: |
   踏雪素材库活化器。从个人创作资产库中检索并注入高质量素材。
-  触发：/taxue-material、帮我整理素材、调用素材库（通过 /taxue 入口路由更高效）
-  - 内容创作本身 → taxue-content
-  - 学习方法 → taxue-learn
+  触发：/taxue-material、帮我整理素材、调用素材库
 ---
 
 # taxue-material：素材库
@@ -52,4 +50,11 @@ description: |
 
 ---
 
-*taxue-material v2.6 — 素材库 · 检索 · 注入*
+*taxue-material v2.7 — 素材库 · 检索 · 注入*
+
+
+## DO NOT
+
+- 从零创建新 skill → `skill-creator`
+- 需要创作内容 → `taxue-content`（material 只管素材，content 管创作）
+- 需要管理素材库本身 → `taxue-material-library`（本 skill 是活化器，不是管理器）

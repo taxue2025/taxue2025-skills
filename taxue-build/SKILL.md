@@ -2,9 +2,7 @@
 name: taxue-build
 description: |
   踏雪系统构建器。帮你把经验变成可复用的工具。
-  触发：/taxue-build、这个问题总是出现、怎么固化流程（通过 /taxue 入口路由更高效）
-  - 只想诊断/优化已有 skill → taxue-skill
-  - 内容创作 → taxue-content
+  触发：/taxue-build、这个问题总是出现、怎么固化流程
 ---
 
 # taxue-build：帮你建
@@ -67,4 +65,11 @@ description: |
 
 ---
 
-*taxue-build v2.6 — 六步编译法 · 按需教学*
+*taxue-build v2.7 — 六步编译法 · 按需教学*
+
+
+## DO NOT
+
+- 从零创建新 skill → `skill-creator`
+- 建完后需要诊断优化 → `taxue-skill`（build 负责创建，skill 负责诊断）
+- 问题只出现一两次 → 不需要 build，直接 solve

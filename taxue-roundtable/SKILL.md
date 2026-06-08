@@ -2,9 +2,7 @@
 name: taxue-roundtable
 description: |
   踏雪多视角碰撞。多个视角同时看同一个问题，暴露你一个人想不到的盲区。
-  触发：/taxue-roundtable、帮我多角度分析、不同视角怎么看（通过 /taxue 入口路由更高效）
-  - 已经有明确方案只需要执行 → taxue-breakdown
-  - 情绪问题 → taxue-calm
+  触发：/taxue-roundtable、帮我多角度分析、不同视角怎么看
 ---
 
 # taxue-roundtable：多视角碰撞
@@ -55,4 +53,11 @@ description: |
 
 ---
 
-*taxue-roundtable v2.6 — 多视角碰撞 · 常用视角*
+*taxue-roundtable v2.7 — 多视角碰撞 · 常用视角*
+
+
+## DO NOT
+
+- 从零创建新 skill → `skill-creator`
+- 需要单一深度洞察 → `taxue-insight`（圆桌是多视角宽度，insight 是单一深度）
+- 需要执行方案 → `taxue-solve`（圆桌给碰撞结论，solve 给执行路径）

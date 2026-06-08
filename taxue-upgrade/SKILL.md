@@ -2,8 +2,7 @@
 name: taxue-upgrade
 description: |
   升级 taxue 系列 skills 到最新版本。
-  触发：/taxue-upgrade、升级到最新版本、检查skill更新（通过 /taxue 入口路由更高效）
-  - 想诊断/优化 skill 功能 → taxue-skill
+  触发：/taxue-upgrade、升级到最新版本、检查skill更新
 ---
 
 # taxue-upgrade：版本管理
@@ -21,8 +20,8 @@ description: |
 ### Step 2：对比远程版本
 
 ```
-本地版本 == 远程版本 → ✅ 最新
-本地版本 < 远程版本  → ⚠️ 可升级
+本地版本 == 远程版本 → 已是最新
+本地版本 < 远程版本  → 可升级
 本地版本 > 远程版本  → 🔔 本地修改（询问是否覆盖）
 ```
 
@@ -43,4 +42,4 @@ description: |
 
 ---
 
-*taxue-upgrade v2.6*
+*taxue-upgrade v2.7*
