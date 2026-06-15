@@ -1,12 +1,14 @@
-# TaxueSkills 
+# TaxueSkills
 
 > **把任何模糊的问题，变成可执行的行动。**
 
-踏雪问题解决系统。不是工具箱，是工作流还有思维模型。24 个 Skill 覆盖问题消解、任务拆解、学习方法、内容创作、本质洞察、情绪处理、关系沟通、商业判断、职业规划全流程。
+踏雪问题解决系统。不是工具箱，是工作流和思维模型。26 个 Skill 覆盖问题消解、任务拆解、学习方法、内容创作、本质洞察、情绪处理、关系沟通、商业判断、行业认知、职业规划全流程。
 
 可在 Claude Code、Codex、Cursor、Grok Build 等任意支持 Skill 的 Agent 上使用。
 
-**最新更新：v3.1**
+**最新更新：v3.2**
+
+**v3.2 更新**：7 个子 Skill 从 v3.0 升级至 v3.1（calm / solve / breakdown / business / relate / content / career-fail），新增冲突消解规则细化与对话信号检测增强。taxue-save 从 v3.0 升级至 v3.2，记忆时效分层机制完善。主入口 taxue 升级至 v2.13，路由与消解逻辑优化。
 
 **v3.1 更新**：taxue-save 新增记忆时效分层机制。三级时效等级（永久/周期/一次性）控制记忆检索策略，基于 VitaBench 2.0 研究发现——错误记忆比没有记忆更危险，用户偏好会随时间漂移。patterns.md 每条规律新增半衰期字段。
 
@@ -93,51 +95,53 @@ cd ~/.claude/skills && git clone https://github.com/taxueseek/taxueskills.git te
 
 ---
 
-## 技能表（24 个）
+## 技能表（26 个）
 
 ### 核心解决层
 
 | 斜杠命令 | 功能 | 自然语言触发 | 版本 |
 |---------|------|-------------|------|
-| `/taxue` | 主入口，自动路由 | 「/t」「卡住了」「迷茫」「纠结」 | v2.12 |
-| `/taxue-solve` | 解法引擎，5层消解漏斗 | 「怎么办」「卡住了」「帮我理一下思路」 | v3.0 |
-| `/taxue-breakdown` | 任务拆解，拆到最小执行单位 | 「帮我拆一下」「事情太多」「步骤」「排期」 | v3.0 |
-| `/taxue-learn` | 学习方法论，四步内化法 | 「怎么学」「怎么入门」「学了记不住」 | v2.7 |
-| `/taxue-content` | 内容创作，从选题到终稿 | 「写一篇」「帮我创作」「小红书」「公众号」 | v3.0 |
-| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | v2.8 |
-| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | v2.7 |
-| `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」「标准化」 | v2.7 |
+| `/taxue` | 主入口，自动路由 | 「/t」「卡住了」「迷茫」「纠结」 | v2.13 |
+| `/taxue-solve` | 解法引擎，5层消解漏斗 | 「怎么办」「卡住了」「帮我理一下思路」 | v3.1 |
+| `/taxue-breakdown` | 任务拆解，拆到最小执行单位 | 「帮我拆一下」「事情太多」「步骤」「排期」 | v3.1 |
+| `/taxue-learn` | 学习方法论，四步内化法 | 「怎么学」「怎么入门」「学了记不住」 | v2.8 |
+| `/taxue-content` | 内容创作，从选题到终稿 | 「写一篇」「帮我创作」「小红书」「公众号」 | v3.1 |
+| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | v2.9 |
+| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | v2.8 |
+| `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」「标准化」 | v2.8 |
 
 ### 深度场景层
 
 | 斜杠命令 | 功能 | 自然语言触发 | 版本 |
 |---------|------|-------------|------|
-| `/taxue-calm` | 情绪管理，把情绪转化为问题 | 「好焦虑」「内耗」「心态崩了」「睡不着」 | v3.0 |
-| `/taxue-relate` | 关系沟通，利益结构分析 | 「怎么谈」「冲突」「谈判」「边界」 | v3.0 |
-| `/taxue-speak` | 说话练习，四种法则 | 「说话紧张」「汇报不流畅」「说不清楚」 | v2.7 |
-| `/taxue-business` | 商业判断，三问定生死 | 「这个生意能不能做」「商业模式」 | v3.0 |
+| `/taxue-calm` | 情绪管理，把情绪转化为问题 | 「好焦虑」「内耗」「心态崩了」「睡不着」 | v3.1 |
+| `/taxue-relate` | 关系沟通，利益结构分析 | 「怎么谈」「冲突」「谈判」「边界」 | v3.1 |
+| `/taxue-speak` | 说话练习，四种法则 | 「说话紧张」「汇报不流畅」「说不清楚」 | v2.8 |
+| `/taxue-business` | 商业判断，三问定生死 | 「这个生意能不能做」「商业模式」 | v3.1 |
+| `/taxue-industry` | 行业认知引擎 | 「了解XX行业」「行业调研」「行业分析」 | v1.2 |
 
 ### 职业发展层
 
 | 斜杠命令 | 功能 | 版本 |
 |---------|------|------|
-| `/taxue-career` | 职场入口，自动路由到职业子 Skill | v2.9 |
-| `/taxue-career-direction` | 方向诊断 | v2.7 |
-| `/taxue-career-resume` | 简历/JD 诊断 | v2.7 |
-| `/taxue-career-channel` | 渠道策略 | v2.7 |
-| `/taxue-career-interview` | 面试/离职 | v2.7 |
-| `/taxue-career-offer` | Offer 决策与薪资谈判 | v2.7 |
-| `/taxue-career-onboard` | 入职前 90 天生存指南 | v2.7 |
-| `/taxue-career-fail` | 失败复盘 | v3.0 |
+| `/taxue-career` | 职场入口，自动路由到职业子 Skill | v2.10 |
+| `/taxue-career-direction` | 方向诊断 | v2.8 |
+| `/taxue-career-resume` | 简历/JD 诊断 | v2.8 |
+| `/taxue-career-channel` | 渠道策略 | v2.8 |
+| `/taxue-career-interview` | 面试/离职 | v2.8 |
+| `/taxue-career-offer` | Offer 决策与薪资谈判 | v2.8 |
+| `/taxue-career-onboard` | 入职前 90 天生存指南 | v2.8 |
+| `/taxue-career-fail` | 失败复盘 | v3.1 |
+| `/taxue-job-search` | 岗位搜索引擎 | v2.2 |
 
 ### 工具与基建
 
 | 斜杠命令 | 功能 | 版本 |
 |---------|------|------|
-| `/taxue-save` | 状态存档（进度/恢复/决策记录）| v3.1 |
-| `/taxue-material` | 素材管理 | v2.7 |
-| `/taxue-skill` 或 `/txs` | Skill 诊断 + 优化 + 自诊断 | v2.7 |
-| `/taxue-upgrade` | 版本管理，一键升级 | v2.7 |
+| `/taxue-save` | 状态存档（进度/恢复/决策记录）| v3.2 |
+| `/taxue-material` | 素材管理 | v2.8 |
+| `/taxue-skill` 或 `/txs` | Skill 诊断 + 优化 + 自诊断 | v2.8 |
+| `/taxue-upgrade` | 版本管理，一键升级 | v2.8 |
 
 ---
 
@@ -153,8 +157,8 @@ content 需要选题 → insight 看透本质 → content 出终稿 → material
 calm（情绪解码）→ solve（解决具体问题）→ relate（如涉及关系）
 
 career → direction → resume → channel → interview → offer → onboard
-                                              ↓（失败时）
-                                        career-fail → direction
+                                             ↓（失败时）
+                                       career-fail → direction
 ```
 
 ---
@@ -209,6 +213,7 @@ career → direction → resume → channel → interview → offer → onboard
 
 | 版本 | 更新 | 日期 |
 |------|------|------|
+| v3.2 | 7 个子 Skill 升级至 v3.1，taxue-save v3.2，主入口 v2.13，冲突消解规则细化，对话信号检测增强 | 2026-06 |
 | v3.1 | taxue-save 记忆时效分层（永久/周期/一次性），patterns.md 半衰期字段 | 2026-06 |
 | v3.0 | 7 个子 Skill 输出风格重构，对话信号全局检测，消解前置拦截，连招建议 | 2026-06 |
 | v2.12 | 入口参考文件索引，渐进式信息披露 | 2026-06 |

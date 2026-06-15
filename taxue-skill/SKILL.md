@@ -1,8 +1,11 @@
 ---
 name: taxue-skill
+version: "2.8"
 description: |
   Skill 工程工具箱——诊断、改造、优化、发布。
-  触发：/taxue-skill、/txs、skill优化、skill诊断、帮我看看这个skill
+  触发：/taxue-skill、/txs、skill优化、skill诊断、帮我看看这个skill、触发不准确、token消耗、skill太复杂、技能优化。
+  EN: "optimize skill", "skill diagnosis", "skill not triggering", "debug skill", "refine triggers", "reduce token usage".
+  不触发：从零新建 skill → taxue-build（skill 是优化已有的）。
 ---
 
 # taxue-skill：Skill 工程工具箱
@@ -66,15 +69,14 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 诊断完成需要从零重建 | `taxue-build` |
-| 诊断出重复性问题模式 | `taxue-build` 固化 |
-| 需要深度架构审计 | `skill-auditor` |
-| 需要创建新 skill | `skill-creator` |
-| 需要优化触发/功能逻辑 | `skill-creator` |
+诊断完成后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
+
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 诊断发现 skill 问题太多，不如从零重建 | 「修不如重建。用 `/taxue-build` 重新搭一个。」 |
+| 需要创建全新的 skill（非优化已有的） | 「你要的是新建，不是优化。用 `skill-creator`。」 |
 
 ## DO NOT
 
@@ -82,12 +84,6 @@ description: |
 - 需要深度结构性审计 → `skill-auditor`（taxue-skill 做问题分类，auditor 做深度执行）
 
 ---
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
-
 ---
 
-*taxue-skill v2.7 — 六种改造模式 · 评估模式 · 上下文效率 · 自然语言叙述*
+*taxue-skill v2.8*

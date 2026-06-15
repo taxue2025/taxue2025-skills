@@ -1,15 +1,16 @@
 ---
 name: taxue-career-interview
+version: "2.8"
 description: |
   面试/离职引擎——求职者面试准备、离职沟通；雇主面试候选人、离职面谈。
-  触发：/taxue-career-interview、准备面试怎么做、面试总是挂怎么改
+  触发：/taxue-career-interview、准备面试怎么做、面试总是挂怎么改、面试、面试准备、面试技巧、面试问题、模拟面试、离职。
+  EN: "interview prep", "interview tips", "mock interview", "how to interview", "resign", "quit job".
+  不触发：被拒复盘 → taxue-career-fail（interview 是准备，fail 是复盘已失败）、改简历 → taxue-career-resume。
 ---
 
 # taxue-career-interview：面试与离职
 
 > 面试不是考试，是双向选择。离职不是结束，是关系转换。
-
----
 
 ## 求职者
 
@@ -19,29 +20,25 @@ description: |
 
 **离职。好聚好散，不说坏话。** 先找好下家再提。理由说「个人发展」就行，别展开。你不是在写辞职信，你是在做关系转换——将来可能又碰上的。
 
----
-
 ## 雇主
 
 面试别人，问做过什么，不要问会怎么做。行为面试法：过去的行为预测未来。文化匹配问一句：「上一份工作最让你崩溃的事是什么」——答案比任何测试都准。
 
----
+## 下一步建议（条件触发）
 
-## 下游协作
+面试指导给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 面试完了有Offer | `taxue-career-offer` |
-| 面试挂了 | `taxue-career-fail` |
-| 离职后需要规划下一步 | `taxue-career-direction` |
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 面试通过拿到 Offer，需要决策 | 「过了，接下来选 Offer。用 `/taxue-career-offer`。」 |
+| 面试挂了，需要找根因 | 「挂了不是终点，得知道卡在哪。用 `/taxue-career-fail`。」 |
+| 离职了，需要重新规划方向 | 「离职是重新选择的机会。用 `/taxue-career-direction`。」 |
 
 ## DO NOT
 
 - 从零创建新 skill → `skill-creator`
 - 需要选Offer/谈薪资 → `taxue-career-offer`（interview 只管面试和离职，选Offer走 offer）
 - 需要改简历 → `taxue-career-resume`
-
----
 
 ## 说话风格
 
@@ -54,4 +51,4 @@ description: |
 
 ---
 
-*taxue-career-interview v2.7 — 说话风格 · 公理追溯*
+*taxue-career-interview v2.8 — 精准分流 · 面试与离职独立*

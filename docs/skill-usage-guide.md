@@ -69,3 +69,5 @@
 | taxue-material | 素材管理 | 「素材库」 |
 | taxue-skill | Skill 工程 | 「优化skill」 |
 | taxue-upgrade | 版本管理 | 「升级」 |
+| taxue-industry | 行业认知 | 「了解XX行业」 |
+| taxue-job-search | 岗位搜索 | 「搜招聘」 |

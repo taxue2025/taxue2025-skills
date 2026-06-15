@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## v3.2（2026-06）
+
+### 全版本同步升级
+
+- **7 个子 Skill 升级至 v3.1**：taxue-calm / taxue-solve / taxue-breakdown / taxue-business / taxue-relate / taxue-content / taxue-career-fail
+- 新增冲突消解规则细化（P013 增强，学习遗忘 vs 求解、面试被拒 vs 面试准备冲突消解）
+- 对话信号全局检测表进一步完善
+- **taxue-save 升级至 v3.2**：记忆时效分层机制完善，DO NOT 分区优化
+- **taxue 主入口升级至 v2.13**：路由与消解逻辑优化
+- **10 个子 Skill 升级至 v2.8**：learn / speak / material / skill / roundtable / build / career-channel / career-direction / career-interview / career-offer / career-onboard / career-resume / upgrade
+- **taxue-insight 升级至 v2.9**
+- **taxue-career 升级至 v2.10**
+- **taxue-job-search 升级至 v2.2**：新增 8 大来源体系、垂直行业覆盖、交叉验证机制
+- **taxue-industry 升级至 v1.2**
+- **README.md 技能表从 24 个更新为 26 个**（补上 industry 和 job-search）
+- **combo_map.json 独立发布**：作为静态数据文件，不依赖 Python 路由引擎
+
+---
+
 ## v3.1（2026-06）
 
 ### 记忆时效分层（taxue-save）

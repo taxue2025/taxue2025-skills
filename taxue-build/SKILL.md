@@ -1,8 +1,11 @@
 ---
 name: taxue-build
+version: "2.8"
 description: |
   踏雪系统构建器。帮你把经验变成可复用的工具。
-  触发：/taxue-build、这个问题总是出现、怎么固化流程
+  触发：/taxue-build、这个问题总是出现、怎么固化流程、固化、工具化、做工具、写skill、经验变工具、重复问题、总是出现、封装、标准化。
+  EN: "turn this into a tool", "standardize this process", "create a workflow", "automate this", "build a system".
+  不触发：诊断已有 skill → taxue-skill（build 是新建，skill 是优化）。
 ---
 
 # taxue-build：帮你建
@@ -49,27 +52,20 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 建完了需要测试 | 用真实场景测试 |
-| 测试后需要优化 | `taxue-skill` 诊断 |
+工具建完后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
----
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 工具建好了但效果不确定，需要诊断问题 | 「工具搭好了，跑一遍看哪里不对。用 `/taxue-skill` 诊断。」 |
 
 ---
-
-*taxue-build v2.7 — 六步编译法 · 按需教学*
-
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 建完后需要诊断优化 → `taxue-skill`（build 负责创建，skill 负责诊断）
 - 问题只出现一两次 → 不需要 build，直接 solve
+---
+
+*taxue-build v2.8*

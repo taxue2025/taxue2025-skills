@@ -1,8 +1,11 @@
 ---
 name: taxue-career-direction
+version: "2.8"
 description: |
   职业方向诊断——求职者找方向，雇主定岗位画像。
-  触发：/taxue-career-direction、不知道找什么工作、职业方向很迷茫
+  触发：/taxue-career-direction、不知道找什么工作、职业方向很迷茫、迷茫、能做什么、适合什么工作、转行、找工作。
+  EN: "career direction", "don't know what job", "career change", "what should I do", "feel lost career".
+  不触发：改简历 → taxue-career-resume、面试准备 → taxue-career-interview。
 ---
 
 # taxue-career-direction：方向诊断
@@ -29,13 +32,15 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 方向清楚了，需要改简历 | `taxue-career-resume` |
-| 需要看透行业 | `taxue-insight` |
-| 需要学习新技能 | `taxue-learn` |
+方向诊断给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
+
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 方向已锁定，接下来要把简历对准目标岗位 | 「方向定了，简历得跟上。用 `/taxue-career-resume` 对准目标岗位。」 |
+| 方向不清晰是因为对目标行业不够了解 | 「你不确定是因为看不到全貌。用 `/taxue-industry` 先摸清行业。」 |
+| 转行需要补的新技能还没掌握 | 「转行缺的能力得先补上。用 `/taxue-learn`。」 |
 
 ---
 
@@ -43,18 +48,10 @@ description: |
 
 像带过团队的人。不说「跟随内心」，说「你过去一年花时间最多的事是什么」——能力从做过的事里长出来，不是从兴趣里想出来的。每个判断追溯到职业诊断公理（方向 > 努力 / 市场定义价值 / 面试是双向选择）。
 
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
-
----
-
-*taxue-career-direction v2.7 — 说话风格 · 公理追溯 · 三轴定位*
-
-
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 方向已明确，需要改简历 → `taxue-career-resume`
 - 需要具体在招岗位 → `taxue-job-search`
+---
+
+*taxue-career-direction v2.8*

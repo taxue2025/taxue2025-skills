@@ -1,8 +1,11 @@
 ---
 name: taxue-roundtable
+version: "2.8"
 description: |
   踏雪多视角碰撞。多个视角同时看同一个问题，暴露你一个人想不到的盲区。
-  触发：/taxue-roundtable、帮我多角度分析、不同视角怎么看
+  触发：/taxue-roundtable、帮我多角度分析、不同视角怎么看、圆桌、多视角、多角度、碰一碰、多角度讨论、不同角度看、视角碰撞。
+  EN: "multiple perspectives", "devil's advocate", "different angles", "different perspectives", "brainstorm views", "roundtable".
+  不触发：只要一句洞见 → taxue-insight（roundtable 是多视角讨论，insight 是单句穿透）。
 ---
 
 # taxue-roundtable：多视角碰撞
@@ -36,28 +39,22 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 需要看透本质 | `taxue-insight` |
-| 需要执行方案 | `taxue-solve` |
-| 需要固化结论 | `taxue-build` |
+圆桌讨论结束后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
----
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 多个视角碰撞后收敛出一个清晰的行动方向 | 「视角碰完了，接下来解决怎么做。用 `/taxue-solve`。」 |
+| 讨论中某个视角揭示了深层问题，值得单独深挖 | 「有个视角值得挖深。用 `/taxue-insight` 看透本质。」 |
+| 讨论产出了可复用的判断框架 | 「这套判断逻辑值得固化。用 `/taxue-build`。」 |
 
 ---
-
-*taxue-roundtable v2.7 — 多视角碰撞 · 常用视角*
-
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 需要单一深度洞察 → `taxue-insight`（圆桌是多视角宽度，insight 是单一深度）
 - 需要执行方案 → `taxue-solve`（圆桌给碰撞结论，solve 给执行路径）
+---
+
+*taxue-roundtable v2.8*

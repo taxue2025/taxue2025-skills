@@ -1,8 +1,11 @@
 ---
 name: taxue-material
+version: "2.8"
 description: |
   踏雪素材库活化器。从个人创作资产库中检索并注入高质量素材。
-  触发：/taxue-material、帮我整理素材、调用素材库
+  触发：/taxue-material、整理素材、调用素材库、金句、案例库、找点灵感、有什么素材、好的素材、引用、积累素材。
+  EN: "need inspiration", "looking for quotes", "content library", "find examples", "writing material", "reference material".
+  不触发：写文章本身 → taxue-content、学写作方法 → taxue-learn。
 ---
 
 # taxue-material：素材库
@@ -33,28 +36,21 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 需要创作内容 | `taxue-content` |
-| 需要看透本质 | `taxue-insight` |
-| 需要学习 | `taxue-learn` |
+素材给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
----
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 拿到素材了，接下来要写进内容里 | 「素材有了，开始写。用 `/taxue-content`。」 |
+| 找不到好素材，根源是话题没看透 | 「素材少是因为没挖透。用 `/taxue-insight` 先看本质。」 |
 
 ---
-
-*taxue-material v2.7 — 素材库 · 检索 · 注入*
-
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 需要创作内容 → `taxue-content`（material 只管素材，content 管创作）
 - 需要管理素材库本身 → `taxue-material-library`（本 skill 是活化器，不是管理器）
+---
+
+*taxue-material v2.8*

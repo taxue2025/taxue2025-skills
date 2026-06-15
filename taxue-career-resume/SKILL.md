@@ -1,8 +1,11 @@
 ---
 name: taxue-career-resume
+version: "2.8"
 description: |
   简历/JD引擎——求职者写简历、匹配JD；雇主写JD、筛选简历。
-  触发：/taxue-career-resume、帮我看看简历、简历投了没回音
+  触发：/taxue-career-resume、帮我看看简历、简历投了没回音、简历、JD、投了没回音、简历诊断、面试邀请、怎么写简历。
+  EN: "resume review", "CV feedback", "how to write resume", "match job description", "no interview calls".
+  不触发：查在招岗位 → taxue-job-search、面试技巧 → taxue-career-interview。
 ---
 
 # taxue-career-resume：简历/JD 引擎
@@ -31,31 +34,26 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 简历改好了，需要选渠道投递 | `taxue-career-channel` |
-| 简历匹配度高，准备面试 | `taxue-career-interview` |
-| 简历方向不对，需重新定位 | `taxue-career-direction` |
+简历诊断给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
+
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 简历改好了，接下来选投递渠道 | 「简历到位了，接下来投对地方。用 `/taxue-career-channel`。」 |
+| 简历改好了，准备面试 | 「简历有了，该练面试了。用 `/taxue-career-interview`。」 |
+| 简历方向不对，改了也没用 | 「方向不对，简历改得再好也白搭。用 `/taxue-career-direction` 重新定位。」 |
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 需要面试准备 → `taxue-career-interview`
-- 需要选Offer/谈薪资 → `taxue-career-offer`
+- 需要选投递渠道 → `taxue-career-channel`
 
 ---
 
 ## 说话风格
 
 像看了 5000 份简历的人。不说「简历很重要」，说「HR 看你的简历 6 秒，这 6 秒你输得起吗？」每个判断追溯到职业诊断公理（方向 > 努力 / 市场定义价值 / 面试是双向选择）。
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
-
 ---
 
-*taxue-career-resume v2.7 — 说话风格 · 公理追溯*
+*taxue-career-resume v2.8*

@@ -1,8 +1,11 @@
 ---
 name: taxue-relate
+version: "3.1"
 description: |
   关系与沟通引擎。处理人际冲突、谈判沟通、关系决策。
-  触发：/taxue-relate、怎么跟对方谈、关系出了问题怎么办
+  触发：/taxue-relate、怎么跟对方谈、关系出了问题、吵架、关系、对方、沟通、谈判、冲突、说服、得罪、加薪、提薪、涨薪、不配合。
+  EN: "relationship conflict", "how to negotiate", "communication issue", "argument with", "how to talk to", "resolve conflict", "resolve this conflict".
+  不触发：练表达/演讲技巧 → taxue-speak、情绪崩溃 → taxue-calm。
 ---
 
 # taxue-relate：关系与沟通
@@ -48,26 +51,15 @@ description: |
 
 ---
 
-## 下游协作
+## 下一步建议（条件触发）
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 说话能力不足 | `taxue-speak` |
-| 需要多角度 | `taxue-roundtable` |
-| 情绪太重 | `taxue-calm` |
-| 需要固化共识 | `taxue-build` |
+关系分析给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
----
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
-
----
-
-*taxue-relate v3.0 — 去模板化 · 自然对话式 · 利益结构分析 · 沟通脚本*
-
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 关系结构看清了，但用户缺的是表达技巧而非策略 | 「策略有了，接下来练怎么把话说好。用 `/taxue-speak`。」 |
+| 冲突背后有强烈的情绪，光靠沟通策略解决不了 | 「这个问题核心是情绪，不是话术。先用 `/taxue-calm` 理清。」 |
+| 双方达成的共识值得固化成规则，避免下次又吵 | 「这次谈拢的边界值得固化。用 `/taxue-build`。」 |
 
 ---
 
@@ -77,6 +69,8 @@ description: |
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 表达能力不足（知道说什么但说不出来） → `taxue-speak`（relate 解决策略，speak 解决能力）
 - 情绪未处理且影响判断 → `taxue-calm`（先处理情绪再处理关系）
+---
+
+*taxue-relate v3.1*

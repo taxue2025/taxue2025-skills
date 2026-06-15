@@ -1,15 +1,16 @@
 ---
 name: taxue-career-onboard
+version: "2.8"
 description: |
   入职后前90天生存指南。拿到Offer不是终点，转正才是。
-  触发：/taxue-career-onboard、刚入职怎么适应、试用期怎么过
+  触发：/taxue-career-onboard、刚入职怎么适应、试用期怎么过、刚入职、试用期、新人适应、入职第一天、怎么融入、转正。
+  EN: "new job onboarding", "first 90 days", "probation period", "new hire tips", "fitting in at work".
+  不触发：面试 → taxue-career-interview、Offer选择 → taxue-career-offer。
 ---
 
 # taxue-career-onboard：入职前 90 天
 
 > 入职不是终点，转正才是。前 90 天决定你能不能留下来。
-
----
 
 **第一个月：搞清楚状况，不急着表现。** 找关键人——谁决策、谁影响、谁执行。摸清团队怎么做事。跟直属 leader 聊一次——他对你的期望是什么，怎么算做得好。多听少说，多问少判断。先看清楚水面下的暗礁，再划船。
 
@@ -17,23 +18,21 @@ description: |
 
 **第三个月：从新人变自己人。** 建立稳定的工作节奏，开始跨部门打交道。这时候你不再是「那个新人」，你是「XX 项目的小李」。
 
----
+## 下一步建议（条件触发）
 
-## 下游协作
+入职指导给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
-| 触发条件 | 推荐 |
-|----------|------|
-| 遇到挫折需要复盘 | `taxue-career-fail` |
-| 试用期快结束，需要总结 | `taxue-save` |
-| 需要提升具体能力 | `taxue-learn` |
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 试用期遇到挫折，需要诊断是环境问题还是自己的问题 | 「试用期不顺得先查清原因。用 `/taxue-career-fail`。」 |
+| 试用期快结束，这段经历值得总结存档 | 「试用期快到了，值得留个档方便复盘。用 `/taxue-save`。」 |
+| 发现某项能力跟不上岗位要求 | 「缺的能力得赶紧补。用 `/taxue-learn`。」 |
 
 ## DO NOT
 
 - 从零创建新 skill → `skill-creator`
 - 还没拿到Offer → `taxue-career-offer` 或 `taxue-career-direction`
 - 入职前准备（非适应问题） → `taxue-career-interview`
-
----
 
 ## 说话风格
 
@@ -46,4 +45,4 @@ description: |
 
 ---
 
-*taxue-career-onboard v2.7 — 说话风格 · 公理追溯*
+*taxue-career-onboard v2.8 — 精准分流 · 入职适应独立*

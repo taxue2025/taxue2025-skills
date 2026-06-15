@@ -1,8 +1,11 @@
 ---
 name: taxue-speak
+version: "2.8"
 description: |
   说话练习——四种领地，四套法则。
-  触发：/taxue-speak、我怎么表达更好、说话总是紧张怎么办
+  触发：/taxue-speak、表达更好、说话紧张、汇报、演讲紧张、演讲技巧、口才、公开发言、不敢开口、开口发言、汇报没重点、练表达、沟通技巧。
+  EN: "nervous speaking", "presentation skills", "public speaking", "improve communication", "speech anxiety", "presentation anxiety", "how to present", "pitch", "stutter".
+  不触发：写稿/写演讲稿 → taxue-content、学外语口语 → taxue-learn、纯关系冲突 → taxue-relate。
 ---
 
 # taxue-speak：四种领地，四套法则
@@ -111,24 +114,15 @@ Point（重申）：回到结论+行动号召
 
 ---
 
-## 语言
+## 下一步建议（条件触发）
 
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
+表达指导给出后，根据结果判断是否推荐下一步。**不是每次都推荐**，只在结果明确指向另一个 skill 时才说一句。
 
----
-
-*taxue-speak v2.7 — 四种领地，四套法则*
-
-
-## 下游协作
-
-| 触发条件 | 推荐 |
-|----------|------|
-| 需要沟通策略（非表达能力问题） | `taxue-relate` |
-| 紧张背后是自我怀疑 | `taxue-calm` |
-| 表达卡住导致其他问题 | `taxue-solve` |
-| 需要固化表达框架 | `taxue-build` |
+| 结果条件 | 推荐话术 |
+|----------|---------|
+| 紧张的根源不是技巧，而是自我怀疑或恐惧 | 「这不是表达能力问题，是心理在作怪。用 `/taxue-calm` 先处理。」 |
+| 问题不在怎么说，而在跟谁说、利益怎么协调 | 「这不是表达问题，是关系问题。用 `/taxue-relate`。」 |
+| 练出了一套好用的表达框架，值得每次复用 | 「这套表达模板值得固化。用 `/taxue-build`。」 |
 
 ---
 
@@ -138,6 +132,8 @@ Point（重申）：回到结论+行动号召
 
 ## DO NOT
 
-- 从零创建新 skill → `skill-creator`
 - 处理关系冲突/谈判策略 → `taxue-relate`（speak 只解决「怎么说出来」，不解决「说什么」）
 - 用户只是紧张但不需要训练 → 不做过度干预
+---
+
+*taxue-speak v2.8*

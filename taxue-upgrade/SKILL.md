@@ -1,8 +1,10 @@
 ---
 name: taxue-upgrade
+version: "2.8"
 description: |
   升级 taxue 系列 skills 到最新版本。
-  触发：/taxue-upgrade、升级到最新版本、检查skill更新
+  触发：/taxue-upgrade、升级到最新版本、检查skill更新、更新、版本、taxue升级。
+  EN: "upgrade taxue", "check for updates", "update skills", "latest version".
 ---
 
 # taxue-upgrade：版本管理
@@ -34,12 +36,6 @@ description: |
 备份当前版本 → 下载新版本 → 验证 → 完成。
 
 ---
-
-## 语言
-
-- 用户用中文就用中文回复，用英文就用英文回复
-- 中文回复遵循《中文文案排版指北》
-
 ---
 
-*taxue-upgrade v2.7*
+*taxue-upgrade v2.8*
