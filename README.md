@@ -8,9 +8,9 @@
 
 **最新更新：v3.3**
 
-**v3.3 更新（2026-06-15）**：7 个子 Skill 内容升级。taxue-insight 从 v2.9 升级至 v3.0，新增四视角路由（本质/结构/共情/历史），穿透分类再下判断。taxue-roundtable 从 v2.8 升级至 v5.1，全面重写为多模式讨论引擎（并行判断/质询/辩论/多轮深挖），引入 10 角色库、把握加权、深度引擎。taxue-relate 从 v3.1 升级至 v3.2，新增谈判关系、场景化脚本、风险预判、「绝对不要说」禁忌表。taxue-solve 从 v3.1 升级至 v3.2，新增「剥壳看结构」步骤，方案模板从 4 元素扩展至 6 元素（理想态+推进）。taxue-breakdown 移除模板输出，简化反模式。taxue-speak 重构为单步直接路由。主入口新增 references/shared-rules.md 共享规则文件。
+**v3.3 更新（2026-06-15）**：7 个子 Skill 内容升级。taxue-insight 从 v2.9 升级至 v3.0，新增四视角路由（本质/结构/共情/历史），穿透分类再下判断。taxue-roundtable 从 v2.8 升级至 v3.1，全面重写为多模式讨论引擎（并行判断/质询/辩论/多轮深挖），引入 10 角色库、把握加权、深度引擎。taxue-relate 从 v3.1 升级至 v3.2，新增谈判关系、场景化脚本、风险预判、「绝对不要说」禁忌表。taxue-solve 从 v3.1 升级至 v3.2，新增「剥壳看结构」步骤，方案模板从 4 元素扩展至 6 元素（理想态+推进）。taxue-breakdown 移除模板输出，简化反模式。taxue-speak 重构为单步直接路由。主入口新增 references/shared-rules.md 共享规则文件。
 
-**EN: v3.3 (2026-06-15)** — 7 sub-skills upgraded. taxue-insight v2.9→v3.0 with 4-perspective routing (essence/structure/empathy/history). taxue-roundtable v2.8→v5.1 complete rewrite as a multi-mode discussion engine (parallel/jury/debate/deep-dive) with 10-role library, confidence weighting, and 4 depth engines. taxue-relate v3.1→v3.2 adding negotiation mode, scenario-specific scripts, risk pre-assessment, and a "never say" ban list. taxue-solve v3.1→v3.2 adding a "peel the shell" step and expanding the solution template from 4 to 6 elements. taxue-breakdown removes template output and simplifies anti-patterns. taxue-speak restructured to single-step direct routing. New references/shared-rules.md extracted from the main router.
+**EN: v3.3 (2026-06-15)** — 7 sub-skills upgraded. taxue-insight v2.9→v3.0 with 4-perspective routing (essence/structure/empathy/history). taxue-roundtable v2.8→v3.1 complete rewrite as a multi-mode discussion engine (parallel/jury/debate/deep-dive) with 10-role library, confidence weighting, and 4 depth engines. taxue-relate v3.1→v3.2 adding negotiation mode, scenario-specific scripts, risk pre-assessment, and a "never say" ban list. taxue-solve v3.1→v3.2 adding a "peel the shell" step and expanding the solution template from 4 to 6 elements. taxue-breakdown removes template output and simplifies anti-patterns. taxue-speak restructured to single-step direct routing. New references/shared-rules.md extracted from the main router.
 
 ---
 
@@ -93,7 +93,7 @@ cd ~/.claude/skills && git clone https://github.com/taxueseek/taxueskills.git te
 | `/taxue-learn` | 学习方法论，四步内化法 | 「怎么学」「怎么入门」「学了记不住」 | v2.8 |
 | `/taxue-content` | 内容创作，从选题到终稿 | 「写一篇」「帮我创作」「小红书」「公众号」 | v3.1 |
 | `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | **v3.0** |
-| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | **v5.1** |
+| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | **v3.1** |
 | `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」「标准化」 | v2.8 |
 
 ### 深度场景层

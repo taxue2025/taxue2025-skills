@@ -58,7 +58,7 @@
 | taxue-learn | 学习方法 | 「怎么学」 | v2.8 |
 | taxue-content | 内容创作 | 「写一篇」 | v3.1 |
 | taxue-insight | 本质洞察 | 「本质是什么」 | v3.0 |
-| taxue-roundtable | 决策圆桌 | 「多角度看看」 | v5.1 |
+| taxue-roundtable | 决策圆桌 | 「多角度看看」 | v3.1 |
 | taxue-build | 系统构建 | 「固化流程」 | v2.8 |
 | taxue-calm | 情绪解码 | 「好焦虑」 | v3.1 |
 | taxue-relate | 关系沟通 | 「怎么谈」 | v3.2 |
