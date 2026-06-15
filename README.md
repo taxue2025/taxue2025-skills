@@ -6,25 +6,11 @@
 
 可在 Claude Code、Codex、Cursor、Grok Build 等任意支持 Skill 的 Agent 上使用。
 
-**最新更新：v3.2**
+**最新更新：v3.3**
 
-**v3.2 更新**：7 个子 Skill 从 v3.0 升级至 v3.1（calm / solve / breakdown / business / relate / content / career-fail），新增冲突消解规则细化与对话信号检测增强。taxue-save 从 v3.0 升级至 v3.2，记忆时效分层机制完善。主入口 taxue 升级至 v2.13，路由与消解逻辑优化。
+**v3.3 更新（2026-06-15）**：7 个子 Skill 内容升级。taxue-insight 从 v2.9 升级至 v3.0，新增四视角路由（本质/结构/共情/历史），穿透分类再下判断。taxue-roundtable 从 v2.8 升级至 v5.1，全面重写为多模式讨论引擎（并行判断/质询/辩论/多轮深挖），引入 10 角色库、把握加权、深度引擎。taxue-relate 从 v3.1 升级至 v3.2，新增谈判关系、场景化脚本、风险预判、「绝对不要说」禁忌表。taxue-solve 从 v3.1 升级至 v3.2，新增「剥壳看结构」步骤，方案模板从 4 元素扩展至 6 元素（理想态+推进）。taxue-breakdown 移除模板输出，简化反模式。taxue-speak 重构为单步直接路由。主入口新增 references/shared-rules.md 共享规则文件。
 
-**v3.1 更新**：taxue-save 新增记忆时效分层机制。三级时效等级（永久/周期/一次性）控制记忆检索策略，基于 VitaBench 2.0 研究发现——错误记忆比没有记忆更危险，用户偏好会随时间漂移。patterns.md 每条规律新增半衰期字段。
-
-**v3.0 更新**：7 个子 Skill 输出风格重构（底线 + 真人特征 + 声线分化），新增对话信号全局检测、消解前置拦截层、连招建议机制。patterns.md 置信度格式统一为文字描述。
-
-**v2.12 更新**：入口新增参考文件索引与渐进式信息披露机制，agent 按需导航，不预加载参考文件。
-
-**v2.11 更新**：输出风格三层化（底线 + 真人特征 + 声线分化），9 个子 skill 独立人格声线，消解话术全面人话化。
-
-**v2.10 更新**：路由表重构为 17 级优先级表，新增冲突消解规则，新增消解前置拦截。
-
-**v2.9 更新**：入口路由表增加行业相关触发词，新增默会知识让技能更聪明，优化技能运作速度。
-
-**v2.8 更新**：6 个子 Skill 升级至 v2.8，新增反模式声明（anti-pattern declarations），案例库外移至 references 目录，描述去边界化（移除冗余边界声明，改为自然语言触发）。
-
-**v2.7 更新**：入口架构重构。taxue 入口从 130 行瘦身至 35 行，删除格莱斯信号检测、流程衔接表、超出能力话术等 95 行冗余内容。入口纯路由化，推理轮次从 3-5 轮降至 1 轮，每次调用节省 30-50% 的入口处理时间。能力下沉至各子 Skill，输出质量不降级。
+**EN: v3.3 (2026-06-15)** — 7 sub-skills upgraded. taxue-insight v2.9→v3.0 with 4-perspective routing (essence/structure/empathy/history). taxue-roundtable v2.8→v5.1 complete rewrite as a multi-mode discussion engine (parallel/jury/debate/deep-dive) with 10-role library, confidence weighting, and 4 depth engines. taxue-relate v3.1→v3.2 adding negotiation mode, scenario-specific scripts, risk pre-assessment, and a "never say" ban list. taxue-solve v3.1→v3.2 adding a "peel the shell" step and expanding the solution template from 4 to 6 elements. taxue-breakdown removes template output and simplifies anti-patterns. taxue-speak restructured to single-step direct routing. New references/shared-rules.md extracted from the main router.
 
 ---
 
@@ -102,12 +88,12 @@ cd ~/.claude/skills && git clone https://github.com/taxueseek/taxueskills.git te
 | 斜杠命令 | 功能 | 自然语言触发 | 版本 |
 |---------|------|-------------|------|
 | `/taxue` | 主入口，自动路由 | 「/t」「卡住了」「迷茫」「纠结」 | v2.13 |
-| `/taxue-solve` | 解法引擎，5层消解漏斗 | 「怎么办」「卡住了」「帮我理一下思路」 | v3.1 |
+| `/taxue-solve` | 解法引擎，5层消解漏斗 | 「怎么办」「卡住了」「帮我理一下思路」 | v3.2 |
 | `/taxue-breakdown` | 任务拆解，拆到最小执行单位 | 「帮我拆一下」「事情太多」「步骤」「排期」 | v3.1 |
 | `/taxue-learn` | 学习方法论，四步内化法 | 「怎么学」「怎么入门」「学了记不住」 | v2.8 |
 | `/taxue-content` | 内容创作，从选题到终稿 | 「写一篇」「帮我创作」「小红书」「公众号」 | v3.1 |
-| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | v2.9 |
-| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | v2.8 |
+| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | **v3.0** |
+| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」「讨论一下」 | **v5.1** |
 | `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」「标准化」 | v2.8 |
 
 ### 深度场景层
@@ -115,7 +101,7 @@ cd ~/.claude/skills && git clone https://github.com/taxueseek/taxueskills.git te
 | 斜杠命令 | 功能 | 自然语言触发 | 版本 |
 |---------|------|-------------|------|
 | `/taxue-calm` | 情绪管理，把情绪转化为问题 | 「好焦虑」「内耗」「心态崩了」「睡不着」 | v3.1 |
-| `/taxue-relate` | 关系沟通，利益结构分析 | 「怎么谈」「冲突」「谈判」「边界」 | v3.1 |
+| `/taxue-relate` | 关系沟通，利益结构分析 | 「怎么谈」「冲突」「谈判」「边界」 | **v3.2** |
 | `/taxue-speak` | 说话练习，四种法则 | 「说话紧张」「汇报不流畅」「说不清楚」 | v2.8 |
 | `/taxue-business` | 商业判断，三问定生死 | 「这个生意能不能做」「商业模式」 | v3.1 |
 | `/taxue-industry` | 行业认知引擎 | 「了解XX行业」「行业调研」「行业分析」 | v1.2 |
@@ -213,12 +199,13 @@ career → direction → resume → channel → interview → offer → onboard
 
 | 版本 | 更新 | 日期 |
 |------|------|------|
+| **v3.3** | 7 个子 Skill 内容升级：insight v3.0（四视角路由）、roundtable v5.1（多模式讨论引擎重写）、relate v3.2（谈判+场景脚本）、solve v3.2（剥壳+六元素）、breakdown 简化和 speak 重构。主入口新增 shared-rules.md。 | 2026-06-15 |
 | v3.2 | 7 个子 Skill 升级至 v3.1，taxue-save v3.2，主入口 v2.13，冲突消解规则细化，对话信号检测增强 | 2026-06 |
 | v3.1 | taxue-save 记忆时效分层（永久/周期/一次性），patterns.md 半衰期字段 | 2026-06 |
 | v3.0 | 7 个子 Skill 输出风格重构，对话信号全局检测，消解前置拦截，连招建议 | 2026-06 |
-| v2.12 | 入口参考文件索引，渐进式信息披露 | 2026-06 |
-| v2.11 | 输出风格三层化，9 个独立人格声线 | 2026-06 |
-| v2.10 | 路由表重构为 17 级优先级，冲突消解规则 | 2026-06 |
+| v2.12 | 入口参考文件索引，渐进式信息披露 | 2026-06-08 |
+| v2.11 | 输出风格三层化，9 个独立人格声线 | 2026-06-08 |
+| v2.10 | 路由表重构为 17 级优先级，冲突消解规则 | 2026-06-05 |
 | v2.9 | 新增 taxue-industry（行业认知引擎）、路由表扩展、默会知识注入 | 2026-06 |
 | v2.8 | 6 个子 Skill 升级，新增反模式声明、案例外移、描述去边界化 | 2026-06 |
 | v2.7 | 入口纯路由化，能力下沉，入口瘦身 95 行，推理轮次 3-5 → 1 | 2026-06 |

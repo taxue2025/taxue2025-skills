@@ -50,24 +50,31 @@
 
 ## Skill 列表
 
-| Skill | 功能 | 触发示例 |
-|-------|------|---------|
-| taxue | 入口路由 | /taxue |
-| taxue-solve | 解法引擎 | 「怎么办」 |
-| taxue-breakdown | 任务拆解 | 「帮我拆一下」 |
-| taxue-learn | 学习方法 | 「怎么学」 |
-| taxue-content | 内容创作 | 「写一篇」 |
-| taxue-insight | 本质洞察 | 「本质是什么」 |
-| taxue-roundtable | 决策圆桌 | 「多角度看看」 |
-| taxue-build | 系统构建 | 「固化流程」 |
-| taxue-calm | 情绪解码 | 「好焦虑」 |
-| taxue-relate | 关系沟通 | 「怎么谈」 |
-| taxue-speak | 说话练习 | 「说话紧张」 |
-| taxue-business | 商业判断 | 「这个生意能不能做」 |
-| taxue-career | 职业入口 | 「找工作」 |
-| taxue-save | 状态存档 | 「保存进度」 |
-| taxue-material | 素材管理 | 「素材库」 |
-| taxue-skill | Skill 工程 | 「优化skill」 |
-| taxue-upgrade | 版本管理 | 「升级」 |
-| taxue-industry | 行业认知 | 「了解XX行业」 |
-| taxue-job-search | 岗位搜索 | 「搜招聘」 |
+| Skill | 功能 | 触发示例 | 版本 |
+|-------|------|---------|------|
+| taxue | 入口路由 | /taxue | v2.13 |
+| taxue-solve | 解法引擎 | 「怎么办」 | v3.2 |
+| taxue-breakdown | 任务拆解 | 「帮我拆一下」 | v3.1 |
+| taxue-learn | 学习方法 | 「怎么学」 | v2.8 |
+| taxue-content | 内容创作 | 「写一篇」 | v3.1 |
+| taxue-insight | 本质洞察 | 「本质是什么」 | v3.0 |
+| taxue-roundtable | 决策圆桌 | 「多角度看看」 | v5.1 |
+| taxue-build | 系统构建 | 「固化流程」 | v2.8 |
+| taxue-calm | 情绪解码 | 「好焦虑」 | v3.1 |
+| taxue-relate | 关系沟通 | 「怎么谈」 | v3.2 |
+| taxue-speak | 说话练习 | 「说话紧张」 | v2.8 |
+| taxue-business | 商业判断 | 「这个生意能不能做」 | v3.1 |
+| taxue-career | 职业入口 | 「找工作」 | v2.10 |
+| taxue-save | 状态存档 | 「保存进度」 | v3.2 |
+| taxue-material | 素材管理 | 「素材库」 | v2.8 |
+| taxue-skill | Skill 工程 | 「优化skill」 | v2.8 |
+| taxue-upgrade | 版本管理 | 「升级」 | v2.8 |
+| taxue-industry | 行业认知 | 「了解XX行业」 | v1.2 |
+| taxue-job-search | 岗位搜索 | 「搜招聘」 | v2.2 |
+| taxue-career-direction | 方向诊断 | 「不知道做什么」 | v2.8 |
+| taxue-career-resume | 简历诊断 | 「帮我看看简历」 | v2.8 |
+| taxue-career-channel | 渠道策略 | 「在哪投」 | v2.8 |
+| taxue-career-interview | 面试准备 | 「面试」 | v2.8 |
+| taxue-career-offer | Offer决策 | 「选Offer」 | v2.8 |
+| taxue-career-onboard | 入职指南 | 「刚入职」 | v2.8 |
+| taxue-career-fail | 失败复盘 | 「总是被拒」 | v3.1 |
