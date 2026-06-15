@@ -4,10 +4,12 @@ A decision-making and problem-solving skill collection for AI agents. **26 skill
 
 Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that supports local skill loading.
 
-[English](#english) | [中文](#chinese)
+<a id="top"></a>
+[English](#en-section) | [中文](#cn-section)
 
 ---
 
+<a id="en-section"></a>
 ## English
 
 ### What This Repo Does
@@ -152,7 +154,8 @@ MIT License
 
 ---
 
-## 中文
+<a id="cn-section"></a>
+## 中文版
 
 ### 这是什么
 
