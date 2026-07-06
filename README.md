@@ -16,7 +16,7 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 
 踏雪问题解决系统。不是工具箱，是工作流和思维模型。**26 个 Skill** 覆盖问题消解、任务拆解、学习方法、内容创作、本质洞察、情绪处理、关系沟通、商业判断、行业认知、职业规划全流程。
 
-可在 Claude Code、Codex、Cursor、Grok Build 等任意支持 Skill 的 Agent 上使用。
+可在 Claude Code、Codex、Cursor、Zcode、WorkBuddy 、Grok Build 等任意支持 Skill 的 Agent 上使用。
 
 **最新版本：v3.4**（2026-07-06）— 主入口瘦身 + 路由准确性优化。
 
