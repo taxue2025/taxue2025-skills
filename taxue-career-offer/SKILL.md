@@ -2,10 +2,11 @@
 name: taxue-career-offer
 version: "2.8"
 description: |
-  Offer决策与薪资谈判——选Offer、谈薪资、离职决策。
-  触发：/taxue-career-offer、多个Offer怎么选、怎么跟HR谈薪资、Offer、选offer、薪资、谈薪资、谈薪、工资谈判、多offer、offer对比。
+  Offer 决策与薪资谈判——选 Offer、谈薪资、离职决策。拿到结果之后的权衡。Offer decision and salary negotiation: weighing after you have results.
+
+  When to use / 适用场景: 多个Offer怎么选、怎么跟HR谈薪资、Offer、选offer、薪资、谈薪资、谈薪、工资谈判、多offer、offer对比、手上有两个Offer怎么选、薪资谈判话术、该不该接受offer、该不该接offer、接受offer、怎么选offer。
   EN: "choose between offers", "salary negotiation", "multiple offers", "counter offer", "how much to ask".
-  不触发：面试技巧 → taxue-career-interview、入职适应 → taxue-career-onboard。
+  Not for / 不适用: 面试技巧 → taxue-career-interview、入职适应 → taxue-career-onboard。
 ---
 
 # taxue-career-offer：选Offer
@@ -21,6 +22,32 @@ description: |
 **薪资。** 薪资加福利匹配市场就行，不追求最高。但如果你连市场平均水平都不知道就去谈，底气是虚的。
 
 **稳定。** 公司和行业未来三年靠得住吗？这条权重最低——年轻人最不值钱的就是稳定，最值钱的是成长速度。
+
+---
+
+## 谈判准备
+
+选好了 Offer，如果薪资没到位，谈。
+
+**先搞清楚三件事：**
+1. **你的底线是什么？** 低于多少不接？写下来，别在谈判桌上现想。
+2. **你有没有竞争 Offer？** 有就是筹码。没有也别慌，但要知道自己手里有什么牌。
+3. **市场价是多少？** 同岗位同城市同年限，范围是多少？不知道就去查。
+
+**谈判话术框架：**
+
+> 「感谢 Offer，我对这个机会很感兴趣。关于薪资，我的预期是 [区间]，基于 [一个理由：市场水平/个人经验/手上有其他机会]。想了解一下这边还有空间吗？」
+
+**几个原则：**
+- 给区间，不给一个数。留余地。
+- 不说「我现在公司给 XX」——对方不需要知道你的底牌。
+- 对方说「这就是最终价」→ 问「那入职后的调薪机制是怎样的？」——把战场转移到未来。
+- 不要在电话里当场答应或拒绝。说「我需要一两天考虑一下」，挂了电话再想。
+
+**如果手上有多个 Offer：**
+> 「我手上有另一个 Offer，薪资是 [数字]。我更倾向你们这边，但差距有点大。能帮我看看有没有调整的空间？」
+
+不说假话，但可以说对自己有利的真话。
 
 ## 下一步建议（条件触发）
 

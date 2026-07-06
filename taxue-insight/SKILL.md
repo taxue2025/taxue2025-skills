@@ -2,10 +2,11 @@
 name: taxue-insight
 version: "3.0"
 description: |
-  踏雪本质洞察。穿透表象，直指结构。
-  触发：/taxue-insight、帮我看看本质、底层逻辑是什么、本质、看透、洞察、第一性原理、根因、规律、结构、靠谱吗、数据分析。
-  EN: "what's the essence", "underlying logic", "first principles", "root cause", "see through", "core insight".
-  不触发：商业模式判断 → taxue-business（insight 是认知层，business 是商业决策层）。
+  穿透表象，用一句话直指本质和结构。不写长分析，给让人愣住的判断。Pierce through the surface with one sharp sentence on the underlying structure.
+
+  When to use / 适用场景: 帮我看看本质、底层逻辑是什么、本质、看透、洞察、第一性原理、根因、规律、结构、这件事到底怎么回事。、这个结论成立吗、站得住脚吗、判断对不对、数据结论、结论站不站得住
+  EN: "what's the essence", "underlying logic", "first principles", "root cause", "see through", "core insight", "what's really going on".
+  Not for / 不适用: 商业模式/项目能不能做 → taxue-business（insight 是认知层，business 是商业决策层）。要多视角碰撞而非一句判断 → taxue-roundtable。
 ---
 
 # taxue-insight：直指本质
@@ -92,7 +93,7 @@ description: |
 
 ## 说话风格
 
-> 通用人格见主入口语气表（锋利、一句到位）。本节只列 insight 独有的禁忌。
+> 通用人格见 references/shared-rules.md（锋利、一句到位）。本节只列 insight 独有的禁忌。
 
 只输出洞见，不解释。不需要铺垫、不需要「让我想想」、不需要事后补充。如果一句说不清，说明还没想透。洞见说完就结束，不要画蛇添足加一句「你觉得呢」。
 

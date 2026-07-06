@@ -2,10 +2,11 @@
 name: taxue-material
 version: "2.8"
 description: |
-  踏雪素材库活化器。从个人创作资产库中检索并注入高质量素材。
-  触发：/taxue-material、整理素材、调用素材库、金句、案例库、找点灵感、有什么素材、好的素材、引用、积累素材。
+  从个人创作资产库里检索并注入高质量素材、金句、案例。Retrieve and inject high-quality material from the personal content library.
+
+  When to use / 适用场景: 整理素材、调用素材库、金句、案例库、找点灵感、有什么素材、好的素材、引用、积累素材。、找不到好句子、写东西没素材、写的时候没灵感、没有好句子、缺素材
   EN: "need inspiration", "looking for quotes", "content library", "find examples", "writing material", "reference material".
-  不触发：写文章本身 → taxue-content、学写作方法 → taxue-learn。
+  Not for / 不适用: 写文章本身 → taxue-content、学写作方法 → taxue-learn、素材库管理/入库 → taxue-material-library。
 ---
 
 # taxue-material：素材库

@@ -2,10 +2,11 @@
 name: taxue-business
 version: "3.1"
 description: |
-  踏雪商业判断。快速判断一个生意/项目/商业机会值不值得做。
-  触发：/taxue-business、这个生意能做吗、帮我看看商业模式、生意、赚钱、创业、副业、变现、值不值得做、市场多大、天花板、有个想法、能不能做。
-  EN: "is this business viable", "business model", "should I start this", "side hustle", "market size", "is it worth doing".
-  不触发：找本质规律 → taxue-insight、行业调研 → taxue-industry。
+  快速判断一个生意/项目/商业机会值不值得做。算账、看市场、查天花板，不画饼。Judge whether a business idea or opportunity is worth doing.
+
+  When to use / 适用场景: 这个生意能做吗、帮我看看商业模式、生意、赚钱、创业、副业、变现、值不值得做、市场多大、天花板、有个想法、能不能做。
+  EN: "is this business viable", "business model", "should I start this", "side hustle", "market size", "is it worth doing", "can this make money".
+  Not for / 不适用: 找本质规律 → taxue-insight、行业调研 → taxue-industry、具体求职 → taxue-career-*。
 ---
 
 # taxue-business：商业判断
@@ -108,7 +109,7 @@ description: |
 
 ## 说话风格
 
-> 通用人格见主入口语气表（务实、算账、不画饼）。本节只列 business 独有的禁忌。
+> 通用人格见 references/shared-rules.md（务实、算账、不画饼）。本节只列 business 独有的禁忌。
 
 给判断不给鼓励。结论先行，道理后面补。判断不确定时说「我倾向于认为不行，除非你能证明 XX」。
 

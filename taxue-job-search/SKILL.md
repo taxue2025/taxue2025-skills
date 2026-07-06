@@ -2,12 +2,11 @@
 name: taxue-job-search
 version: "2.2"
 description: |
-  求职岗位搜索引擎——按地区、学历、企业类型精准搜索招聘信息，交叉验证岗位详情。
-  触发：/taxue-job-search、搜招聘、找岗位、有没有招聘信息、有招人的吗、国企招聘、招聘、岗位、在招、报名、招人。
+  按地区、学历、企业类型精准搜索真实在招岗位，交叉验证多来源。不是职业建议，是查招聘信息。Search real job listings by region, education, employer type with cross-validation.
+
+  When to use / 适用场景: 搜招聘、找岗位、有没有招聘信息、有招人的吗、国企招聘、招聘、岗位、在招、报名、招人、XX市有没有招XX的、专科能报什么、帮我搜一下XX岗位、BOSS直聘上搜一下、有没有在招XX的。
   EN: "job listings", "hiring near me", "job search", "who's hiring", "government jobs", "recruitment".
-  适用场景：查某地区某类企业（国企/央企/外企/民企/事业单位）的在线招聘信息，
-  尤其适合按学历（专科/本科/硕士）、地区、行业筛选岗位。
-  不触发：改简历 → taxue-career-resume、职业方向 → taxue-career-direction。
+  Not for / 不适用: 改简历 → taxue-career-resume、职业方向 → taxue-career-direction、投递渠道选择 → taxue-career-channel。
 ---
 
 # taxue-job-search：求职岗位搜索引擎
@@ -36,7 +35,7 @@ description: |
 | 地区 | 福建省三明市、广东、全国 | **必须** |
 | 学历 | 专科/大专、本科、硕士 | 不限 |
 | 企业类型 | 国企、央企、外企、民企、事业单位 | 不限 |
-| 行业 | 教育、医疗、工程、金融、IT、制造业 | 不限 |
+| 行业 | 教育、医疗、工程、金融、IT、制造业、互联网、科技 | 不限 |
 | 时间要求 | 最近、本月、当前可报名 | 默认当前可报名 |
 | 其他条件 | 年龄、专业、工作性质 | 不限 |
 
@@ -46,7 +45,15 @@ description: |
 
 ### 第 1 步：多渠道并行搜索
 
-读取 `references/platforms.md`，根据用户的企业类型和行业选择对应平台。每次搜索至少覆盖 2-3 个不同来源类型，确保不遗漏。
+读取 `references/platforms.md`，根据用户的企业类型和行业选择对应平台。
+
+**选平台的逻辑：**
+- 国企/央企/事业单位 → 优先政府/官方平台（A/B 类）
+- 互联网/科技/民企 → 优先商业招聘平台（C 类：BOSS直聘、拉勾等）
+- 外企 → 优先外企专项平台（D 类）
+- 用户指定了平台（如「帮我在 BOSS 直聘上搜」）→ 直接用用户指定的平台
+
+每次搜索至少覆盖 2-3 个不同来源类型，确保不遗漏。
 
 ### 第 2 步：时效性过滤
 
@@ -129,7 +136,7 @@ description: |
 
 ## 说话风格
 
-> 通用人格见主入口语气表。job-search 特化：像招聘信息核实员，只报事实，不评价岗位好坏。
+> 通用人格见 references/shared-rules.md。job-search 特化：像招聘信息核实员，只报事实，不评价岗位好坏。
 
 ---
 

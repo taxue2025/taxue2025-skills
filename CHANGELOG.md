@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## v3.4（2026-07-06）
+
+### 路由性能优化（主入口瘦身）
+
+- **主入口从 193 行降到 118 行（-39%）**，冷启动 token 减半。成长日志外迁到 `taxue/CHANGELOG.md`，输出风格节压缩为指针 + 声线分化表（完整规则在 `references/shared-rules.md`）。7 个子 skill 的风格引用改为 `shared-rules.md`，消除三处重复维护。
+
+### 路由准确性优化（description 补触发词）
+
+- **离线基准 Top-1 从 90.2%（37/41）提升到 100%（41/41）**，泛化测试 4 条全通过。
+- `taxue-relate` 补职场关系词（老板针对我/领导挑毛病/排挤/同事关系等 14 个）。
+- `taxue-solve` 补决策词（该不该辞职/走还是留等），微调删除裸词「该不该」避免误吸。
+- `taxue-insight` 补结论验证词（结论成立吗/站得住脚吗等），不加「靠谱」避免抢 business。
+- `taxue-material` 补素材缺失词（找不到好句子/写东西没素材等）。
+- `taxue-career-offer` 补「该不该接受offer」精确匹配。
+
+### patterns.md grep 精确化
+
+- 主入口 grep 指令改为 `grep -E "适用：.*taxue-{目标子skill}([,， ]|$)"` 精确匹配，消除 `grep taxue` 命中所有 taxue-xxx 的污染。
+
+---
+
 ## v3.3（2026-06-15）
 
 ### 路由优化（主入口）

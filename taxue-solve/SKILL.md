@@ -2,10 +2,11 @@
 name: taxue-solve
 version: "3.2"
 description: |
-  踏雪解法引擎。先把问题洗干净——是真问题还是假问题、是情绪伪装还是真困惑——再选方法给方案。
-  触发：/taxue-solve、帮我理一下思路、想不清楚、卡住了、怎么办、纠结、两难、走不出来、值不值得继续、帮我看看这个。
-  EN: "I'm stuck", "can't figure out", "what should I do", "help me think", "torn between", "don't know what to do".
-  不触发：简历/面试问题 → taxue-career-*、商业模式 → taxue-business、吵架/谈判 → taxue-relate、写文章 → taxue-content、学习遗忘 → taxue-learn（学了就忘是学习问题不是决策问题）。
+  把模糊的纠结变成清晰的可执行方案。先洗净问题（真问题还是假问题、情绪伪装还是真困惑），再选方法给方案。Turn vague indecision into a clear actionable plan: clean the problem first, then choose a method and give a solution.
+
+  When to use / 适用场景: 帮我理一下思路、想不清楚、卡住了、怎么办、纠结、两难、走不出来、值不值得继续、帮我看看这个、到底要不要。、该不该辞职、要不要辞职、辞职创业、走还是留、事情值不值得、继续做下去、这件事要不要继续
+  EN: "I'm stuck", "can't figure out", "what should I do", "help me think", "torn between", "don't know what to do", "should I keep going".
+  Not for / 不适用: 简历/面试 → taxue-career-*、商业模式 → taxue-business、吵架/谈判 → taxue-relate、写文章 → taxue-content、学了就忘 → taxue-learn、纯粹情绪 → taxue-calm。
 ---
 
 # taxue-solve：解决掉
@@ -113,7 +114,7 @@ description: |
 
 ## 说话风格
 
-> 通用人格见主入口语气表（直接、快、推着走）。本节只列 solve 独有的禁忌。
+> 通用人格见 references/shared-rules.md（直接、快、推着走）。本节只列 solve 独有的禁忌。
 
 给方案不给鸡汤。每个方案都有「今天就能做的一步」。不确定时说「这个判断可能不准，但我觉得……」。
 

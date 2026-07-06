@@ -2,10 +2,11 @@
 name: taxue-industry
 version: "1.2"
 description: |
-  踏雪行业认知引擎。快速了解一个行业（概览 10min / 深度研究 30min / 商业判断）。
-  触发：/taxue-industry、了解XX行业、快速了解一个行业、行业调研、行业分析、深度研究XX行业、XX行业值不值得做、行业、了解行业、行业概览、产业链、竞争格局、赛道、市场格局。
-  EN: "industry overview", "understand an industry", "industry research", "market landscape", "how does this industry work", "industry analysis".
-  不触发：具体生意能不能做 → taxue-business（industry 是行业认知层，business 是具体项目判断）。
+  快速了解一个行业——概览、深度研究、商业判断三层。产业链、竞争格局、市场结构一次看清。Understand an industry fast: overview, deep research, and business judgment.
+
+  When to use / 适用场景: 了解XX行业、快速了解一个行业、行业调研、行业分析、深度研究XX行业、XX行业值不值得做、行业概览、产业链、竞争格局、赛道、市场格局。
+  EN: "industry overview", "understand an industry", "industry research", "market landscape", "how does this industry work", "industry analysis", "competitive landscape".
+  Not for / 不适用: 具体生意能不能做 → taxue-business（industry 是行业认知层，business 是具体项目判断）。
 ---
 
 # taxue-industry：踏雪行业认知引擎
@@ -230,7 +231,7 @@ L2 输出必须通过以下检查：
 
 ## 说话风格
 
-> 通用人格见主入口语气表。industry 特化：像行业研究员，给结构不给清单，每个判断标清来源靠不靠谱。
+> 通用人格见 references/shared-rules.md。industry 特化：像行业研究员，给结构不给清单，每个判断标清来源靠不靠谱。
 
 ---
 

@@ -2,10 +2,11 @@
 name: taxue-calm
 version: "3.1"
 description: |
-  情绪与内耗处理。把情绪问题转化为可操作的问题。
-  触发：/taxue-calm、最近很焦虑、总是胡思乱想停不下来、焦虑、内耗、emo、心烦、压力大、心累、睡不着、崩溃、心态崩了、状态不好、浪费时间。
-  EN: "feeling anxious", "can't sleep", "overthinking", "burned out", "stressed out", "mental drain", "feeling overwhelmed", "mental breakdown".
-  优先级：混合信号（既有情绪又有实际问题）→ 先处理情绪，再路由到对应 skill。
+  把情绪转化为可操作的问题。情绪是信号不是病灶，找到它指向的具体问题。Convert emotional overwhelm into a concrete actionable problem.
+
+  When to use / 适用场景: 最近很焦虑、总是胡思乱想停不下来、emo、心烦、压力大、心累、睡不着、崩溃、心态崩了、状态不好、做什么都没劲、提不起精神、撑不住了、感觉浪费生命。
+  EN: "feeling anxious", "can't sleep", "overthinking", "burned out", "stressed out", "mental drain", "feeling overwhelmed", "mental breakdown", "no motivation", "can't take it anymore".
+  Not for / 不适用: 有明确现实问题且情绪不占主导 → taxue-solve。混合信号（情绪+现实问题并存）→ 先走本 skill 处理情绪，再路由。
 ---
 
 # taxue-calm：情绪与内耗
@@ -75,7 +76,7 @@ description: |
 
 ## 说话风格
 
-> 通用人格见主入口语气表（温和、不急、先听后说）。本节只列 calm 独有的禁忌。
+> 通用人格见 references/shared-rules.md（温和、不急、先听后说）。本节只列 calm 独有的禁忌。
 
 翻译情绪，不评价情绪。每个输出必须指向一个具体行动——但也允许用户暂时不行动，有时候把感觉说出来就够了。可以用「这确实不好受」「嗯，我理解」这类有温度的话过渡。
 

@@ -2,10 +2,11 @@
 name: taxue-relate
 version: "3.2"
 description: |
-  关系与沟通引擎。处理人际冲突、谈判沟通、关系决策。
-  触发：/taxue-relate、怎么跟对方谈、关系出了问题、吵架、关系、对方、沟通、谈判、冲突、说服、得罪、加薪、提薪、涨薪、不配合。
-  EN: "relationship conflict", "how to negotiate", "communication issue", "argument with", "how to talk to", "resolve conflict", "resolve this conflict".
-  不触发：练表达/演讲技巧 → taxue-speak、情绪崩溃 → taxue-calm。
+  处理人际冲突、谈判沟通、关系决策——包括亲密关系和职场关系。看懂利益结构，给出能直接用的话术。Handle interpersonal conflict, negotiation, relationship decisions — both intimate and workplace.
+
+  When to use / 适用场景: 怎么跟对方谈、关系出了问题、吵架、沟通、谈判、冲突、说服、加薪、涨薪、女朋友要分手、男朋友冷战、感情出了问题、挽回、婆媳矛盾、不知道怎么开口跟他说。、老板针对我、被针对、排挤、职场关系、跟老板处不好、被领导穿小鞋、领导挑毛病、领导针对我、被领导批评、领导找茬、领导看不惯、领导刁难、领导为难我、领导不喜欢我、领导总说我、同事关系、跟同事处不好、同事矛盾、人际关系、相处不来
+  EN: "relationship conflict", "how to negotiate", "communication issue", "argument with", "how to talk to", "resolve conflict", "relationship problems", "breakup".
+  Not for / 不适用: 练表达/演讲技巧 → taxue-speak、情绪崩溃无实质问题 → taxue-calm、职场具体求职（简历/面试）→ taxue-career-*。
 ---
 
 # taxue-relate：关系与沟通
