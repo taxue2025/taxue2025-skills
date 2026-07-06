@@ -31,8 +31,8 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 
 #### 路由准确性优化（description 补触发词）
 
-- **离线基准 Top-1 从 90.2%（37/41）提升到 100%（41/41）**，泛化测试 4 条全通过
-- 4 个子 skill 补口语化触发词，修复 4 条未命中：
+- **离线基准 Top-1 从 90.2%（37/41）提升**，泛化测试通过
+- 4 个子 skill 补口语化触发词
   - `taxue-relate`：补职场关系词（老板针对我/领导挑毛病/排挤/同事关系等）
   - `taxue-solve`：补决策词（该不该辞职/走还是留等）
   - `taxue-insight`：补结论验证词（结论成立吗/站得住脚吗等）
