@@ -1,11 +1,14 @@
 # TaxueSkills
 
-A decision-making and problem-solving skill collection for AI agents. **26 skills** covering problem dissection, task breakdown, learning methods, content creation, insight, emotional regulation, relationship communication, business judgment, industry analysis, and career planning.
+> **让 AI 不只回答问题，而是帮你做决策。**
 
-Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that supports local skill loading.
+TaxueSkills 不是又一个 prompt 工具箱。它是一套完整的人生决策系统——26 个 Skill 覆盖问题消解、商业判断、行业认知、本质洞察、情绪处理、关系沟通、职业规划、内容创作全流程。
 
-<a id="top"></a>
-[中文](#cn-section) | [English](#en-section)
+传统 AI 给你一段回答就结束了。Taxue 会追问、会反驳、会帮你从多个角度把问题想透，然后推着你迈出第一步。回答完一个问题只是起点——它会自然衔接到下一个该做的事，让对话像旅程一样不断往前推进。
+
+**最新版本：v3.4.1**（2026-07-12）— 主入口升级为演绎引擎、连招无缝衔接。
+
+ [**中文文档**](#中文版) · [**English**](#english) · [GitHub](https://github.com/taxueseek/taxueskills)
 
 ---
 
@@ -14,11 +17,196 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 
 ### 这是什么
 
-踏雪问题解决系统。不是工具箱，是工作流和思维模型。**26 个 Skill** 覆盖问题消解、任务拆解、学习方法、内容创作、本质洞察、情绪处理、关系沟通、商业判断、行业认知、职业规划全流程。
+**踏雪问题解决系统。**
 
-可在 Claude Code、Codex、Cursor、Zcode、WorkBuddy 、Grok Build 等任意支持 Skill 的 Agent 上使用。
+不是工具箱，是工作流和思维模型。**26 个 Skill**，每一个都针对一类真实困境——不是让 AI 说得更像人，而是让 AI 真的能帮你从纠结走到行动。
 
-**最新版本：v3.4.1**（2026-07-12）— 主入口瘦身 + 路由准确性优化。
+传统 AI Chat 模式的问题很明显：你问"我该不该辞职"，它给你一段面面俱到的分析，然后……没了。你知道了，但做不动。Taxue 不一样——它会说"你问该不该，先问你有多久没涨薪了"，然后追问"你现在存款够几个月"，然后告诉你说"如果你是因为痛苦才想走，先处理痛苦这件事"。对话不会停在第一段分析。
+
+### 为什么需要它
+
+大多数人对 AI 的失望不是 AI 不够聪明，是 AI 不懂你的处境：
+
+| 普通 AI 会 | Taxue 会 |
+|-----------|---------|
+| 给你一段全面的分析 | 先定义你说的「容易」「好」「适合」到底指什么 |
+| 面面俱到地列出一二三四 | 问你「你说的是 A 还是 B」，因为 A 和 B 是完全不同的路 |
+| 回答完就停止 | 结尾自然衔接到下一步——"/xxx 走一遍再回来聊" |
+| 永远给建议，不给判断 | 有时候直接说"这事做不成，因为……" |
+
+Taxue 的核心不是「回答问题」，是**把「目标 × 约束 × 调度」强制对齐在同一刻**——你的方向、你的边界、你的行动方案，三张画布同时打开。
+
+### 怎么工作的
+
+```
+你发一个问题
+      ↓
+Taxue 拦截层：伪问题？信息不足？语言陷阱？（比如"容易"没定义）
+      ↓
+匹配 → 激活最合适的 Skill（不是死板查表，是演绎推演）
+      ↓
+输出：多维度分析 + 判断 + 一个精准的追问或行动建议
+      ↓
+对话不停——自然衔接到下一个 Skill，开启下一段旅程
+```
+
+关键是：**默会知识先上。** 能自己推的不靠追问。你看不到【视角A】【视角B】这种分段标题——只看到一个老手在跟你聊，他同时想透了三层，但只说"事情是这样的"。
+
+### 核心能力
+
+#### 🧠 决策引擎（你想清楚一件事）
+
+| 斜杠命令 | 它能做什么 | 典型场景 |
+|---------|-----------|---------|
+| `/taxue` | 主入口，自动路由到最对的 Skill | 任何纠结、迷茫、卡住的问题——直接 / 就行 |
+| `/taxue-solve` | 5 层消解漏斗，先判断问题成不成立 | 「怎么办」「卡住了」「两个工作选哪个」 |
+| `/taxue-insight` | 一句话穿透本质，不是长分析 | 想看看一件事的底层逻辑、规律、结构 |
+| `/taxue-roundtable` | 多视角碰撞，专门暴露你想不到的盲区 | 重大决定前，想让正反方自己打一架 |
+| `/taxue-breakdown` | 把模糊目标拆成今天能动的第一步 | 想法太多不知从哪开始、事情太复杂拆不动 |
+| `/taxue-business` | 快诊 3 问定生死：谁付钱？凭什么？天花板？ | 副业、变现、创业——看一个机会能不能做 |
+
+#### 🤝 关系与情绪（你跟世界的冲突）
+
+| 斜杠命令 | 它能做什么 | 典型场景 |
+|---------|-----------|---------|
+| `/taxue-calm` | 先处理情绪，再处理事——因为情绪是信号不是病灶 | 焦虑、内耗、睡不着、感觉自己撑不住了 |
+| `/taxue-relate` | 看清利益结构，给你能直接用的措辞 | 跟伴侣吵架、跟老板谈判、合伙人闹翻了 |
+| `/taxue-speak` | 练说话——汇报、演讲、公开发言、紧张表达 | 下周要述职、面试说话紧张、讲不到重点 |
+
+#### 🔍 认知升级（你看清一件事）
+
+| 斜杠命令 | 它能做什么 | 典型场景 |
+|---------|-----------|---------|
+| `/taxue-industry` | 快速摸清一个行业——概览 / 深度 / 商业判断三层 | 调研一个想做的新行业、找对标、为什么这个能火 |
+| `/taxue-learn` | 把信息变成能力——不是"如何学习"，是"学了不再忘" | 看了很多书啥也记不住、费曼学习法用不起来 |
+| `/taxue-content` | 从选题到终稿的创作流水线 | 「帮我写」「小红书」「公众号」「标题怎么写」 |
+| `/taxue-material` | 个人创作资产库——检索、入库、盘点、生成选题 | 找灵感、金句、案例库、整理收件箱 |
+
+#### 🎯 职业发展（你走稳一段路）
+
+| 斜杠命令 | 它能做什么 |
+|---------|------|
+| `/taxue-career` | 入口自动路由——诊断方向、优化简历、准备面试、谈 offer、度过试用期 |
+| `/texue-job-search` | 按地区、学历、企业类型精准搜索真实在招岗位 |
+
+#### 🔧 基建（你不丢失任何进度）
+
+| 斜杠命令 | 它能做什么 |
+|---------|------|
+| `/taxue-save` | 存档当前进度、标记决策和验证标准、回来能接着聊 |
+| `/taxue-skill` | 诊断现有的 Skill——触发太宽？token 太重？逻辑太乱？ |
+| `/taxue-upgrade` | 一键升级所有 Skill 到最新版本 |
+
+### 工作流联动（Skill 之间如何串联）
+
+Taxue 的每个 Skill 不是孤岛——它们会自然衔接。常见路线：
+
+```
+# 从想法到方案
+solve → breakdown → build（想清楚 → 拆步骤 → 固化成工具）
+
+# 从选题到发布
+content → insight → content → material（写不透就去挖本质，写完入库）
+
+# 从情绪到行动
+calm → solve → relate（情绪理清 → 解决事 → 推动关系）
+
+# 从方向到入职
+career → direction → resume → channel → interview → offer → onboard
+                                                      ↓（失败时）
+                                                career-fail → direction
+```
+
+### 一个完整的对话示例
+
+**用户：** `/taxue 自媒体有多容易做`
+
+**Taxue：**
+
+> 「自媒体有多容易做」——「容易」没定义。注册账号发视频叫容易，月入过万也算容易，但这两个「容易」隔着一道变现闭环。
+>
+> 注册发内容：启动门槛极低，但 2024 之后全赛道自然流量大幅缩水，纯靠冷启动的成功率不足 3%。大部分新人发 10-20 条没反馈就停更了。
+>
+> 月入过万：行业前 20%，普通人平均需要 8-12 个月持续输出。核心难点不是做内容本身，是跑不通「定位→流量→人群→变现」的闭环——80% 的人卡在这一步。
+>
+> 需要确认一件事：**变现靠平台流量分成，还是卖自有产品/服务？** 两个方向的资源要求和打法完全不同。回答这一个，判断就能缩到具体路径。
+
+**用户：** 靠卖课。英语教育方向。现在有教学经验但没做过自媒体。
+
+**Taxue（此时已自然衔接到 `/taxue-industry`）：**
+
+> 英语教育方向。这个赛道的关键数据：知识付费整体增速放缓，但细分领域——考试类（雅思/考研）、职场英语、少儿英语家长课——头部效应极强。CR5 大概占 60%+。
+>
+> 你是谁很关键——"有教学经验"是供给端能力，但用户买的是"看到效果的承诺"。你的内容能不能让人看了就说"这个老师懂我"，比你教得好不好更重要。
+>
+> 三个验证动作：
+> 1. 找到你目标学员在小红书/B 站的聚集地，看他们吐槽什么——那就是需求
+> 2. 找 5 个英语教育类账号，看他们第一条爆款是什么时候发的——判断时间窗口
+> 3. 录 3 条试听课发出去（不用完美），看有没有人问你"怎么买"
+>
+> 如果第 3 步有 3 人以上问，这个方向成立。如果 0 人问，内容定位需要调。
+>
+> 验证标准：3 个月，1000 粉丝 + 10 人付费咨询。能——继续；不能——换细分方向或换平台。
+
+### 设计哲学
+
+1. **先澄清，后解决**：80% 的纠结是因为问题本身有问题。在错的问题上跑全程是浪费
+2. **多个角度看，一个声音说**：不给你看分段分析（视角A/视角B/判断报告），只给你一个综合判断——因为真实决策从来不是分项打分
+3. **够用就好**：追求当前最有效的一步，不追求完美方案。完美是行动的敌人
+4. **推动行动**：不说"你可以考虑"，说"第一步做 X，如果 Y 发生就继续，不发生就停"
+5. **对话不该停在第一段分析**：结尾自然衔接到下一个 Skill——让决策是一段旅程，不是一个快照
+6. **能固化则不复述**：重复出现的问题应该被写成 Skill，不是一次次重新解答
+7. **入口做减法**：入口只管调度，能力下沉到子 Skill。入口没有"胖逻辑"
+
+### 适用平台
+
+任何支持本地 SKILL.md 加载的 Agent 都能用：
+
+- **Claude Code**：安装到 `~/.claude/skills/`
+- **OpenAI Codex**：安装到 `~/.codex/skills/`
+- **Grok Build**：安装到 `~/.grok/skills/`
+- **Cursor**：安装到 `.cursor/skills/`
+- **其他平台**：参考各平台的 Skill 加载目录
+
+### 快速开始
+
+```bash
+# 方式一：npx 一键安装（推荐）
+npx -y skills add taxueseek/taxueskills -g --all
+
+# 方式二：手动安装
+cd ~/.claude/skills  # 改成你平台的 skills 目录
+git clone https://github.com/taxueseek/taxueskills.git temp
+cp -r temp/taxue* . && rm -rf temp
+```
+
+安装完成后，在任意对话中输入：
+
+```
+/taxue 输入你的问题就行
+```
+
+### 常见问题
+
+**Q：和直接用 ChatGPT 有什么区别？**
+
+A：ChatGPT 给你一个回答，Taxue 开启一段旅程。ChatGPT 是搜索引擎，Taxue 是决策教练——会追问、会反驳、会帮你把模糊的想法变成具体的下一步。
+
+**Q：/taxue 和直接用子 Skill（如 /taxue-solve）有什么区别？**
+
+A：/taxue 是入口——你不用纠结该走哪个，它会自己判断并路由到对的 Skill。如果你明确知道要哪个（比如"我就是想拆解目标"），可以直接用 `/taxue-breakdown` 跳过路由。
+
+**Q：26 个 Skill 需要都学会吗？**
+
+A：不需要。你只需要记住 `/t` 或 `/taxue` + 你的问题。入口会自动送你去该去的地方。其他子 Skill 在你需要时会自动激活。
+
+**Q：适合什么样的场景？**
+
+A：适合"我想不清楚""我卡住了""我不确定这件事该不该做"这类决策型问题。不太适合"帮我查一下天气""翻译这段文字"这类纯信息任务——那是搜索框该干的事。
+
+**Q：为什么我的问题被"消解"了？**
+
+A：因为 80% 的问题本身是错的。你说"自媒体有多容易做"——"容易"没定义，A 定义和 B 定义差十倍。Taxue 会先帮你定义清楚，这个问题才值得被回答。这不是在跟你抬杠，这是决策的基本功。
 
 ### v3.4.1 更新
 
@@ -53,16 +241,7 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 #### 路由准确性优化（description 补触发词）
 
 - **离线基准 Top-1 从 90.2%（37/41）提升**，泛化测试通过
-- 4 个子 skill 补口语化触发词
-  - `taxue-relate`：补职场关系词（老板针对我/领导挑毛病/排挤/同事关系等）
-  - `taxue-solve`：补决策词（该不该辞职/走还是留等）
-  - `taxue-insight`：补结论验证词（结论成立吗/站得住脚吗等）
-  - `taxue-material`：补素材缺失词（找不到好句子/写东西没素材等）
-- `taxue-career-offer`：补「该不该接受offer」精确匹配
-
-#### patterns.md grep 精确化
-
-- 主入口 grep 指令改为 `grep -E` 精确匹配「适用：」行，消除 `grep taxue` 命中所有 taxue-xxx 的污染
+- 4 个子 skill 补口语化触发词（relate 职场关系词、solve 决策词、insight 验证词、material 素材缺失词）
 
 ### v3.3 更新内容
 
@@ -76,111 +255,21 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 
 | Skill | 版本 | 变更 |
 |-------|------|------|
-| **taxue-insight** | v2.9 → **v3.0** | 四视角路由：本质/结构/共情/历史。不同问题用不同视角，不再一刀切冷断言。共情视角先命名感受，结构视角拆利益链，历史视角留余地。 |
-| **taxue-roundtable** | v2.8 → **v3.1** | 全面重写为多模式讨论引擎。4 种模式（并行判断/质询/辩论/多轮深挖），10 角色库 + 7 议题推荐组合，把握加权（0-10），立场追踪，轮空三问，钢人原则。 |
-| **taxue-relate** | v3.1 → **v3.2** | 新增谈判关系（明牌利益交换）。场景化脚本（老板/谈判/伴侣不同语气）。风险预判：「最坏/兜底/不说的代价」。「绝对不要说」禁忌表（5 条 AI 味废话）。 |
-| **taxue-solve** | v3.1 → **v3.2** | 新增「剥壳看结构」步骤——去数字去情绪看关系结构。方案模板从 4 元素扩展至 6 元素（新增理想态 + 推进）。 |
+| **taxue-insight** | v2.9 → **v3.0** | 四视角路由：本质/结构/共情/历史。不同问题用不同视角 |
+| **taxue-roundtable** | v2.8 → **v3.1** | 全面重写为多模式讨论引擎。4 种模式，10 角色库，钢人原则 |
+| **taxue-relate** | v3.1 → **v3.2** | 新增谈判关系。场景化脚本。禁忌表（5 条 AI 味废话） |
+| **taxue-solve** | v3.1 → **v3.2** | 新增「剥壳看结构」步骤。方案模板 4→6 元素 |
 | **taxue-breakdown** | v3.1 | 移除模板输出，简化反模式 |
 | **taxue-business** | v3.1 | 新增「高频假设错误」节、反模式第 4 条 |
 | **taxue-speak** | v2.8 | 重构为单步直接路由，框架定义外移 |
 
-### 技能列表
-
-#### 核心解决层
-
-| 斜杠命令 | 功能 | 触发示例 | 版本 |
-|---------|------|---------|------|
-| `/taxue` | 主入口，自动路由 | 「/t」「卡住了」「迷茫」 | v2.13 |
-| `/taxue-solve` | 解法引擎，5 层消解漏斗 | 「怎么办」「卡住了」「帮我理一下」 | v3.2 |
-| `/taxue-breakdown` | 任务拆解 | 「帮我拆一下」「事情太多」 | v3.1 |
-| `/taxue-learn` | 学习方法，四步内化 | 「怎么学」「学了记不住」 | v2.8 |
-| `/taxue-content` | 内容创作，选题到终稿 | 「写一篇」「小红书」「公众号」 | v3.1 |
-| `/taxue-insight` | 本质洞察，穿透表象 | 「本质是什么」「看透」「第一性原理」 | **v3.0** |
-| `/taxue-roundtable` | 多视角碰撞，暴露盲区 | 「多角度看看」「开圆桌」 | **v3.1** |
-| `/taxue-build` | 系统构建，经验变工具 | 「固化流程」「写个skill」 | v2.8 |
-
-#### 深度场景层
-
-| 斜杠命令 | 功能 | 触发示例 | 版本 |
-|---------|------|---------|------|
-| `/taxue-calm` | 情绪管理 | 「好焦虑」「内耗」「心态崩了」 | v3.1 |
-| `/taxue-relate` | 关系沟通 | 「怎么谈」「冲突」「谈判」 | **v3.2** |
-| `/taxue-speak` | 说话练习 | 「说话紧张」「汇报不流畅」 | v2.8 |
-| `/taxue-business` | 商业判断 | 「这个生意能不能做」 | v3.1 |
-| `/taxue-industry` | 行业认知 | 「了解XX行业」「行业调研」 | v1.2 |
-
-#### 职业发展层
-
-| 斜杠命令 | 功能 | 版本 |
-|---------|------|------|
-| `/taxue-career` | 职场入口，自动路由 | v2.10 |
-| `/taxue-career-direction` | 方向诊断 | v2.8 |
-| `/taxue-career-resume` | 简历/JD 诊断 | v2.8 |
-| `/taxue-career-channel` | 渠道策略 | v2.8 |
-| `/taxue-career-interview` | 面试/离职 | v2.8 |
-| `/taxue-career-offer` | Offer 决策与薪资谈判 | v2.8 |
-| `/taxue-career-onboard` | 入职前 90 天 | v2.8 |
-| `/taxue-career-fail` | 失败复盘 | v3.1 |
-| `/taxue-job-search` | 岗位搜索引擎 | v2.2 |
-
-#### 工具与基建
-
-| 斜杠命令 | 功能 | 版本 |
-|---------|------|------|
-| `/taxue-save` | 状态存档（进度/恢复/决策记录）| v3.2 |
-| `/taxue-material` | 素材管理 | v2.8 |
-| `/taxue-skill` / `/txs` | Skill 诊断 + 优化 | v2.8 |
-| `/taxue-upgrade` | 版本管理，一键升级 | v2.8 |
-
-### 工作流联动
-
-```
-solve → breakdown → build
-content → insight → content → material
-calm → solve → relate
-career → direction → resume → channel → interview → offer → onboard
-                                                      ↓（失败时）
-                                                career-fail → direction
-```
-
-### 快速开始
-
-```bash
-# 安装
-npx -y skills add taxueseek/taxueskills -g --all
-
-# 或手动安装
-cd ~/.claude/skills
-git clone https://github.com/taxueseek/taxueskills.git temp
-cp -r temp/taxue* . && rm -rf temp
-```
-
-**用法：**
-```
-/taxue 两个工作不知道选哪个
-/taxue-insight 为什么大多数人努力还是没有结果
-/taxue-calm 最近总是焦虑得睡不着
-/taxue-breakdown 帮我拆解这个月的目标
-/taxue-business 这个社群项目能不能做
-/taxue-relate 怎么跟合伙人谈股权分配
-/taxue-speak 下周要述职汇报，我紧张
-/taxue-save 保存这次讨论的结论
-```
-
-### 设计哲学
-
-1. **先澄清，后解决**：80% 的纠结是因为问题本身有问题
-2. **够用就好**：追求当前最有效的一步，不追求完美
-3. **推动行动**：不说「你可以考虑」，说「第一步做 X」
-4. **能固化则不复述**：重复的问题写成 Skill
-5. **入口做减法**：入口只管路由，能力下沉到子 Skill
-
-### 版本历史
+### 完整版本历史
 
 | 版本 | 更新 | 日期 |
 |------|------|------|
-| **v3.4.1** | 主入口瘦身（193→118 行，token 减半）。4 个子 skill description 补触发词，基准 Top-1 90.2%→100%。patterns.md grep 精确化。 | 2026-07-06 |
-| **v3.3** | 路由优化（伪问题+信息不足拦截）。7 个子 Skill 升级：insight v3.0（四视角路由）、roundtable v3.1（多模式讨论引擎重写）、relate v3.2、solve v3.2、breakdown/business/speak 改进。shared-rules.md 抽取。 | 2026-06-15 |
+| **v3.4.1** | 主入口重写为演绎引擎（决策触发器）。目标+约束+调度三位一体框架。默会知识优先、多角归一、连招无缝、导航前推不回头。固定模板全删。 | 2026-07-12 |
+| **v3.4** | 主入口瘦身（193→118 行，token 减半）。4 个子 skill description 补触发词，基准 Top-1 90.2%→100%。patterns.md grep 精确化。 | 2026-07-06 |
+| **v3.3** | 路由优化（伪问题+信息不足拦截）。7 个子 Skill 升级：insight v3.0、roundtable v3.1、relate v3.2、solve v3.2、breakdown/business/speak 改进。shared-rules.md 抽取。 | 2026-06-15 |
 | v3.2 | 7 个子 Skill 升级至 v3.1，save v3.2（记忆时效分层），主入口 v2.13 | 2026-06 |
 | v3.1 | save v3.1 记忆时效分层（永久/周期/一次性） | 2026-06 |
 | v3.0 | 7 个子 Skill 输出风格重构，对话信号全局检测，消解前置，连招建议 | 2026-06 |
@@ -200,186 +289,248 @@ MIT License
 <a id="en-section"></a>
 ## English
 
-### What This Repo Does
+### What This Is
 
-TaxueSkills turns fuzzy, overwhelming questions into executable actions. Instead of giving you generic advice, it routes your problem to the right cognitive tool—whether you need to think through a decision, break down a complex task, write better content, or navigate a difficult conversation.
+**TaxueSkills — A decision-making system, not a prompt toolbox.**
 
-**Latest release: v3.4.1** (2026-07-12) — Main entry slimming + routing accuracy optimization.
+26 Skills covering problem dissection, business judgment, industry analysis, first-principles insight, emotional regulation, relationship navigation, career planning, and content creation.
 
-### v3.4.1 Update
+Traditional AI gives you an answer and stops. Taxue追问, challenges, views your problem from multiple angles, then pushes you to take the first step. Finishing one analysis is just the beginning — it naturally flows into the next step, turning the conversation into a journey that keeps moving forward.
 
-#### Main Entry Rewrite (Deduction Engine)
+**Latest: v3.4.1** (2026-07-12) — Entry升级为deduction engine, seamless skill chaining.
 
-- **taxue upgraded from router to decision trigger**: Core positioning changed from "routing only" to a first-principles framework of "Goal + Constraint + Scheduling"
-- **Deduction engine replaces fixed templates**: No longer relies on fixed sentence patterns. Language freely organized based on context each time. Like an expert viewing from multiple angles without labeling perspectives
-- **Tacit knowledge first**: Don't ask what you can deduce yourself. Every question must serve to narrow the judgment, not just collect information
-- **Seamless combo chaining**: Ending naturally flows into the next leg of the journey. Command reference woven in sentences. No standalone recommendation paragraphs, no routing exposure
-- **Forward navigation, no looping back**: After judgment, move forward. No multiple-choice menus. User will speak up if they want to turn
+### Why You Need It
 
-#### Speaking Rules Optimization
+Most disappointment with AI isn't about capability—it's about context:
 
-- Removed fixed output format templates ("run /xxx first" type mechanical phrasing)
-- New principle: Conversations don't pause at "waiting for choice"; no internal structure exposure (perspective A/B/C headers)
-- New principle: One person viewing from multiple angles, output flows naturally without sectioning
+| Regular AI Does | Taxue Does |
+|----------------|------------|
+| Gives a comprehensive analysis | First defines what your "easy" or "good" actually means |
+| Lists pros and cons | Asks "do you mean A or B" — because they're completely different paths |
+| Stops after the answer | Naturally flows into the next step — "/xxx next" woven into the closing sentence |
+| Always gives advice | Sometimes says directly "this won't work, because..." |
 
-#### DO NOT Section Enhanced
+Taxue's core isn't answering questions — it's **forcing Goal × Constraint × Scheduling onto the same canvas simultaneously.**
 
-- Don't wait for choice — after judgment, move forward, never ask "which one do you want"
-- Don't expose internal structure — no visible section headers
-
-### v3.4 Changelog
-
-#### Routing Performance Optimization (Main Entry Slimming)
-
-- **Main entry reduced from 193 to 118 lines (-39%)**, cold-start tokens halved, routing speed improved
-- Changelog moved to `taxue/CHANGELOG.md`, main entry keeps only a pointer, no longer consuming routing context
-- Output style section compressed to pointer + voice differentiation table; full rules in `references/shared-rules.md`, loaded on demand
-- 7 sub-skills' style references switched from "main entry tone table" to `shared-rules.md`, eliminating three redundant maintenance points
-
-#### Routing Accuracy Optimization (Description Trigger Words)
-
-- **Offline benchmark Top-1 improved from 90.2% (37/41) to 100% (41/41)**, generalization test 4/4 passed
-- 4 sub-skills received colloquial trigger words, fixing 4 misses:
-  - `taxue-relate`: Added workplace relationship terms (boss targeting me / leader nitpicking / exclusion / colleague relations, etc.)
-  - `taxue-solve`: Added decision terms (should I quit / stay or leave, etc.)
-  - `taxue-insight`: Added conclusion validation terms (does this conclusion hold / is this judgment correct, etc.)
-  - `taxue-material`: Added material scarcity terms (can't find good sentences / no material for writing, etc.)
-- `taxue-career-offer`: Added "should I accept this offer" exact match
-
-#### patterns.md grep Precision
-
-- Main entry grep command changed to `grep -E` exact match on "适用：" lines, eliminating `grep taxue` pollution that matched all taxue-xxx entries
-
-### v3.3 Changelog
-
-#### Routing optimization (taxue main router)
-
-- **Pseudo-question detection added**: Empty "how to make money" questions now route directly to `taxue-business`; vague "how to stop anxiety" routes to `taxue-calm` — no more getting stuck in the generic router
-- **Vague input detection enhanced**: Abstract "methods", "tips", "should I" questions without context now trigger a clarification prompt before routing, reducing misrouted sessions by an estimated 30%
-- New `references/shared-rules.md` extracted from the main router — shared language rules, output style, and conversation signal detection now live in a single reference file inherited by all sub-skills
-
-#### Sub-skill upgrades (7 skills)
-
-| Skill | Version | What Changed |
-|-------|---------|-------------|
-| **taxue-insight** | v2.9 → **v3.0** | 4-perspective routing: essence/structure/empathy/history. No more one-size-fits-all cold assertions—picks the right lens before judging. Empathy mode names emotions first, structure mode maps interest chains, history mode leaves room for nuance. |
-| **taxue-roundtable** | v2.8 → **v3.1** | Complete rewrite as a multi-mode discussion engine. 4 modes (parallel judgment / cross-examination / debate / deep-dive), 10-character role library + 7 recommended combos, confidence-weighted conclusions (0-10), position-tracking, skip-three-questions filter, steel-man principle. |
-| **taxue-relate** | v3.1 → **v3.2** | New negotiation relationship type with explicit exchange terms. Scenario-aware scripting (boss/negotiation/partner — different tone for each). Risk pre-assessment: "worst case, fallback, cost of silence." "Never say" ban list (5 AI-sounding platitudes). |
-| **taxue-solve** | v3.1 → **v3.2** | New "peel the shell" step that strips numbers and emotions to reveal the underlying structural pattern — turns "this answer" into "a portable framework." Solution template expanded from 4 to 6 elements (added ideal state + next-step prompt). |
-| **taxue-breakdown** | v3.1 | Removed template output section. Simplified anti-patterns from 3 to 2. |
-| **taxue-business** | v3.1 | Added "frequent assumption errors" section (3 common cognitive traps). New anti-pattern: "answering invalid questions." |
-| **taxue-speak** | v2.8 | Restructured from multi-step process to single-step direct routing. Framework definitions moved to references. |
-
-### Included Skills
-
-#### Core Problem-Solving Layer
-
-| Command | Purpose | Natural Triggers |
-|---------|---------|-----------------|
-| `/taxue` | Main router — auto-routes to the right skill | "/t", "I'm stuck", "what should I do" |
-| `/taxue-solve` | Problem-dissection engine, 5-level validation funnel | "What do I do?", "I'm stuck", "help me think" |
-| `/taxue-breakdown` | Task breakdown to actionable steps | "Break this down", "too many things to do" |
-| `/taxue-learn` | Learning methodology, 4-step internalization | "How do I learn X?", "can't remember" |
-| `/taxue-content` | Content creation, from topic to final draft | "Write an article about X", "Xiaohongshu" |
-| `/taxue-insight` | Essence insight, see through the surface | "What's the essence?", "see through", "first principles" |
-| `/taxue-roundtable` | Multi-perspective collision, expose blind spots | "Multiple angles", "roundtable", "discuss" |
-| `/taxue-build` | System builder, turn experience into repeatable tools | "Standardize this", "create a skill" |
-
-#### Depth Scenario Layer
-
-| Command | Purpose | Natural Triggers |
-|---------|---------|-----------------|
-| `/taxue-calm` | Emotional regulation, turn emotions into problems | "Anxious", "overthinking", "can't sleep" |
-| `/taxue-relate` | Relationship communication, interest-structure analysis | "How to negotiate", "conflict", "boundaries" |
-| `/taxue-speak` | Speaking practice, 4 frameworks | "Nervous speaking", "presentation anxiety" |
-| `/taxue-business` | Business judgment, 3-question viability test | "Can this business work?", "business model" |
-| `/taxue-industry` | Industry understanding engine | "Understand X industry", "industry research" |
-
-#### Career Development Layer
-
-| Command | Purpose |
-|---------|---------|
-| `/taxue-career` | Career entry — auto-routes to career sub-skills |
-| `/taxue-career-direction` | Direction diagnosis |
-| `/taxue-career-resume` | Resume / JD review |
-| `/taxue-career-channel` | Channel strategy |
-| `/taxue-career-interview` | Interview prep & resignation |
-| `/taxue-career-offer` | Offer decision & salary negotiation |
-| `/taxue-career-onboard` | First 90 days survival guide |
-| `/taxue-career-fail` | Failure postmortem |
-| `/taxue-job-search` | Job search engine |
-
-#### Tools & Infrastructure
-
-| Command | Purpose |
-|---------|---------|
-| `/taxue-save` | State save/resume/decision log |
-| `/taxue-material` | Content library management |
-| `/taxue-skill` or `/txs` | Skill diagnosis & optimization |
-| `/taxue-upgrade` | Version management, one-click update |
-
-### Workflow Integration
+### How It Works
 
 ```
+You send a question
+      ↓
+Taxue Interceptor: Pseudo-question? Info gap? Language trap? ("easy" undefined)
+      ↓
+Match → Activate the right Skill (not table lookup — deductive reasoning)
+      ↓
+Output: Multi-dimensional analysis + judgment + one precise follow-up question
+      ↓
+Conversation continues — smoothly segues into the next Skill
+```
+
+Key principle: **Tacit knowledge first.** Don't ask what you can deduce yourself. You won't see section headers like [Perspective A] [Perspective B] — just an expert voice that thought through three dimensions simultaneously but speaks as one person.
+
+### Skills at a Glance
+
+#### Decision Engine (Think It Through)
+
+| Command | What It Does | Example Triggers |
+|---------|-------------|-----------------|
+| `/taxue` | Main entry — auto-routes | "I'm stuck" "what should I do" "/t" |
+| `/taxue-solve` | 5-layer dissection funnel | "help me think" "torn between options" |
+| `/taxue-insight` | One sentence cutting to the essence | "first principles" "see through" "essence" |
+| `/taxue-roundtable` | Multi-perspective clash exposing blind spots | "roundtable" "different angles" |
+| `/taxue-breakdown` | Break fuzzy goals into executable steps | "break this down" "too many things" |
+| `/taxue-business` | 3-question viability test | "can this work?" "is this worth doing?" |
+
+#### Emotions & Relationships (Navigate the World)
+
+| Command | What It Does | Example Triggers |
+|---------|-------------|-----------------|
+| `/taxue-calm` | Process emotion before solving the problem | "anxious" "can't sleep" "burned out" |
+| `/taxue-relate` | Map interest structures, give you exact wording | "how to negotiate" "conflict" "boundaries" |
+| `/taxue-speak` | Speaking practice with 4 frameworks | "presentation anxiety" "nervous speaking" |
+
+#### Understanding (See Clearly)
+
+| Command | What It Does | Example Triggers |
+|---------|-------------|-----------------|
+| `/taxue-industry` | Understand any industry in 3 layers | "understand X industry" "industry research" |
+| `/taxue-learn` | Turn information into capability | "can't remember" "how to learn" |
+| `/taxue-content` | Content pipeline from topic to draft | "write an article" "Xiaohongshu" |
+| `/taxue-material` | Personal creative asset library | "find inspiration" "quotes library" |
+
+#### Career (Walk Steady)
+
+| Command | What It Does |
+|---------|-------------|
+| `/taxue-career` | Career entry — auto-routes to career sub-skills |
+| `/taxue-job-search` | Real job listings search by region/education/employer |
+
+#### Infrastructure (Never Lose Progress)
+
+| Command | What It Does |
+|---------|-------------|
+| `/taxue-save` | State save/resume/decision log |
+| `/taxue-skill` | Diagnose and optimize any existing Skill |
+| `/taxue-upgrade` | One-click version upgrade for all Skills |
+
+### Workflow Routes
+
+```
+# From idea to plan
 solve → breakdown → build
+
+# From topic to published
 content → insight → content → material
+
+# From emotion to action
 calm → solve → relate
+
+# From direction to onboarding
 career → direction → resume → channel → interview → offer → onboard
                                                       ↓ (on failure)
                                                 career-fail → direction
 ```
 
+### A Complete Conversation Example
+
+**User:** `/taxue How easy is it to do self-media`
+
+**Taxue:**
+
+> "How easy" isn't defined. Posting your first video is easy. Making $1K/month is easy in a different way—but the two are separated by a monetization chain.
+>
+> Posting content: Near-zero barrier. But organic reach has shrunk dramatically since 2024. Pure cold-start success is under 3%. Most quit after 10-20 posts with no feedback.
+>
+> $1K/month: Top 20%. Takes average people 8-12 months of consistent output. The bottleneck isn't creating content—it's establishing Positioning → Traffic → Audience → Monetization. 80% get stuck here.
+>
+> One question first: **Are you monetizing through platform ad revenue, or selling your own products/services?** The two paths have completely different resource requirements.
+
+**User:** Selling courses. English teaching. Teaching experience but zero media presence.
+
+**Taxue** (now seamlessly chain-routing to `/taxue-industry`):
+
+> English education segment. Key data: knowledge-pay growth slowing, but sub-niches (test prep, business English, kids) have extreme top-heavy concentration—CR5 at 60%+.
+>
+> Identity matters: "teaching experience" is a supply-side capability. But students buy "a promise they can see results in." Your content needs to make them say "this teacher gets me."
+>
+> 3 validation steps:
+> 1. Find where your target learners gather, see what they complain about—that's demand
+> 2. Find 5 English-edu accounts, see when their first viral post hit—gauge timing
+> 3. Record 3 trial lessons and post them (no need to be perfect). See if anyone asks "how to buy"
+>
+> If 3+ people ask — the path is viable. If 0 — adjust positioning.
+>
+> Validation metric: 3 months, 1K followers + 10 paid inquiries. Hit it → continue. Miss → pivot.
+
+### Design Philosophy
+
+1. **Clarify first, solve second**: 80% of confusion stems from a poorly-formed problem
+2. **Multiple angles, one voice**: No section segmentation (Perspective A/B). One integrated judgment—because real decisions aren't scored by category
+3. **Good enough**: The most effective next step, not perfection. Perfection is the enemy of action
+4. **Push action**: Never say "you could consider" — always "step one: do X"
+5. **The conversation doesn't stop**: Natural segue into the next Skill—decisions are journeys, not snapshots
+6. **Codify or repeat**: Recurring problems become Skills, not re-answered each time
+7. **Entry does less**: Routing only, all capability lives in sub-skills. No "fat logic" in the entry
+
+### Compatible Platforms
+
+Any agent supporting local SKILL.md loading:
+
+- **Claude Code**: install to `~/.claude/skills/`
+- **OpenAI Codex**: install to `~/.codex/skills/`
+- **Grok Build**: install to `~/.grok/skills/`
+- **Cursor**: install to `.cursor/skills/`
+- **Others**: see your platform's skill directory
+
 ### Quick Start
 
 ```bash
-# Installation via npx (works for Codex, Claude Code, Cursor, Grok Build)
+# Method 1: npx one-click install (recommended)
 npx -y skills add taxueseek/taxueskills -g --all
 
-# Or manual install
-cd ~/.claude/skills
+# Method 2: Manual install
+cd ~/.claude/skills  # change to your platform's skills directory
 git clone https://github.com/taxueseek/taxueskills.git temp
 cp -r temp/taxue* . && rm -rf temp
 ```
 
-**Usage:**
+Then in any conversation:
+
 ```
-/taxue I'm stuck choosing between two jobs
-/taxue-insight Why do most people work hard but still struggle?
-/taxue-calm I've been anxious and can't sleep
-/taxue-breakdown Help me break down this month's goals
-/taxue-business Can this community project work?
-/taxue-relate How do I negotiate equity with my co-founder?
+/taxue Ask whatever you want
 ```
 
-### Requirements
+### FAQ
 
-- Any agent that supports local SKILL.md loading
-- No external dependencies for core skills
-- Web search + web fetch for `taxue-industry`
+**Q: What's the difference from ChatGPT?**
 
-### Design Philosophy
+A: ChatGPT gives you an answer. Taxue starts a journey. It's the difference between a search engine and a decision coach.
 
-1. **Clarify first, solve second** — 80% of confusion is a poorly-formed problem
-2. **Good enough** — the most effective next step, not perfection
-3. **Push action** — never "you could consider", always "step one: do X"
-4. **Codify or repeat** — recurring problems become Skills
-5. **Entry does less** — routing only, capability lives in sub-skills
+**Q: `/taxue` vs a specific sub-skill like `/taxue-solve`?**
 
-### Version History
+A: `/taxue` is the entry—you never have to wonder which Skill to use. If you already know what you need, go directly (e.g. `/taxue-breakdown`).
+
+**Q: Do I need to learn all 26 Skills?**
+
+A: No. Just remember `/t` or `/taxue` + your question. The entry routes automatically. Other Skills activate on demand.
+
+**Q: Best use cases?**
+
+A: Decisions—"I'm stuck" "I'm not sure if this is worth doing" "I don't know which path to take." Less suited for pure information tasks (weather, translation)—that's what search boxes are for.
+
+**Q: Why does Taxue "dissolve" my question?**
+
+A: Because 80% of questions themselves are malformed. "How easy is self-media?"—"easy" has no definition. Taxue helps define it first. This isn't arguing with you—it's decision-making fundamentals.
+
+### v3.4.1 Update
+
+#### Main Entry Rewrite (Deduction Engine)
+
+- **taxue upgraded from router to decision trigger**: Goal + Constraint + Scheduling first-principles framework
+- **Deduction engine replaces fixed templates**: Language freely organized based on context each time. Like an expert viewing from multiple angles without labeling perspectives
+- **Tacit knowledge first**: Don't ask what you can deduce yourself
+- **Seamless combo chaining**: Ending naturally flows into the next leg of the journey. Command reference woven in sentences
+- **Forward navigation, no looping back**: After judgment, move forward. No multiple-choice menus
+
+#### Speaking Rules & DO NOT Enhancement
+
+- Removed fixed output format templates (mechanical phrasing elimination)
+- New: Conversations don't pause at "waiting for choice"; no internal structure exposure
+
+### v3.4 Update
+
+#### Routing Performance
+
+- **Main entry reduced 193→118 lines (-39%)**, cold-start tokens halved
+- Changelog externalized to `taxue/CHANGELOG.md`
+- 4 sub-skills received colloquial trigger words, benchmark Top-1 90.2%→100%
+
+### v3.3 Update
+
+#### Routing & 7 Sub-skill Upgrades
+
+- Pseudo-question detection and vague input detection added
+- **taxue-insight** v3.0: 4-perspective routing
+- **taxue-roundtable** v3.1: Multi-mode discussion engine
+- **taxue-relate** v3.2: Negotiation + scenario scripts
+- **taxue-solve** v3.2: New "peel the shell" step
+
+### Full Version History
 
 | Version | Highlights | Date |
 |---------|-----------|------|
-| **v3.4.1** | Main entry slimming (193→118 lines, tokens halved). 4 sub-skill descriptions received trigger words, benchmark Top-1 90.2%→100%. patterns.md grep precision. | 2026-07-06 |
-| **v3.3** | Routing optimization (pseudo-question + vague input detection). 7 sub-skill upgrades: insight v3.0 (4-perspective routing), roundtable v3.1 (multi-mode engine), relate v3.2, solve v3.2, breakup/business/speak improvements. shared-rules.md extracted. | 2026-06-15 |
-| v3.2 | 7 sub-skills to v3.1, save v3.2 (memory tiering), main router v2.13, conflict resolution refinement | 2026-06 |
-| v3.1 | save v3.1 memory tiering (permanent/periodic/one-shot), patterns.md half-life fields | 2026-06 |
-| v3.0 | 7 sub-skills output style rewrite, global conversation signal detection, pre-filtering layer, combo suggestion | 2026-06 |
-| v2.12 | Entry reference index, progressive information disclosure | 2026-06-08 |
+| **v3.4.1** | Deduction engine rewrite. Goal+Constraint+Scheduling framework. Tacit knowledge first, multi-angle unified, seamless chains. | 2026-07-12 |
+| **v3.4** | Entry slimming (193→118 lines). 4 sub-skill trigger word patches. Benchmark 90.2%→100%. | 2026-07-06 |
+| **v3.3** | Routing optimization. 7 sub-skill upgrades. shared-rules.md extracted. | 2026-06-15 |
+| v3.2 | 7 sub-skills to v3.1, save v3.2 (memory tiering) | 2026-06 |
+| v3.1 | save v3.1 memory tiering (permanent/periodic/one-shot) | 2026-06 |
+| v3.0 | 7 sub-skills output rewrite, global signal detection, combo suggestion | 2026-06 |
+| v2.12 | Entry reference index, progressive disclosure | 2026-06-08 |
 | v2.11 | 3-layer output style, 9 persona voices | 2026-06-08 |
-| v2.10 | 17-level priority routing table, conflict resolution (P013) | 2026-06-05 |
-| v2.9 | New industry skill, routing expansion, tacit knowledge injection | 2026-06 |
-| v2.8 | 6 sub-skills upgraded, anti-pattern declarations, cases externalized | 2026-06 |
-| v2.7 | Entry pure-routing, 130→35 lines, 3-5→1 reasoning round | 2026-06 |
+| v2.10 | 17-level priority routing, conflict resolution | 2026-06-05 |
+| v2.9 | New industry skill, tacit knowledge injection | 2026-06 |
+| v2.8 | 6 sub-skills upgraded, anti-pattern declarations | 2026-06 |
+| v2.7 | Entry pure-routing, 130→35 lines | 2026-06 |
 
 ### License
 
