@@ -18,7 +18,28 @@ Works with Claude Code, Codex, Cursor, Grok Build, and any agent platform that s
 
 可在 Claude Code、Codex、Cursor、Zcode、WorkBuddy 、Grok Build 等任意支持 Skill 的 Agent 上使用。
 
-**最新版本：v3.4**（2026-07-06）— 主入口瘦身 + 路由准确性优化。
+**最新版本：v3.4.1**（2026-07-12）— 主入口瘦身 + 路由准确性优化。
+
+### v3.4.1 更新
+
+#### 主入口重写（演绎引擎）
+
+- **taxue 从路由器升级为决策触发器**：核心定位从"只做路由"改为"目标 + 约束 + 调度"三位一体的第一性原理框架
+- **演绎引擎替代固定模板**：不再依赖固定句式输出，每次根据情境自由组织语言。像老手从多个角度看问题，不标注视角标题
+- **默会知识优先**：能自己推的不靠追问。每个问题必须是为了缩小判断范围，不是为了收集信息本身
+- **连招无缝衔接**：结尾自然衔接到下一段旅程，指令织在句子里。不单独成段推荐，不暴露分流感
+- **导航前推不回头**：判断给完往前走，不给"选择题"，用户如果要拐弯他自己会说
+
+#### 说话规则优化
+
+- 删除了固定输出格式模板（"先跑 /xxx，再往下聊" 属于机械句式）
+- 新增原则：对话不停留在「等选择」上、不暴露内部结构（视角A/B/C 类标题）
+- 新增原则：一个人从多个角度看问题，输出自然流畅不分段
+
+#### 行为准则（DO NOT）增强
+
+- 不等待选择——判断给完往前走，不要问「你想先走哪条」
+- 不暴露内部结构——用户看不到分段标题
 
 ### v3.4 更新
 
@@ -158,7 +179,7 @@ cp -r temp/taxue* . && rm -rf temp
 
 | 版本 | 更新 | 日期 |
 |------|------|------|
-| **v3.4** | 主入口瘦身（193→118 行，token 减半）。4 个子 skill description 补触发词，基准 Top-1 90.2%→100%。patterns.md grep 精确化。 | 2026-07-06 |
+| **v3.4.1** | 主入口瘦身（193→118 行，token 减半）。4 个子 skill description 补触发词，基准 Top-1 90.2%→100%。patterns.md grep 精确化。 | 2026-07-06 |
 | **v3.3** | 路由优化（伪问题+信息不足拦截）。7 个子 Skill 升级：insight v3.0（四视角路由）、roundtable v3.1（多模式讨论引擎重写）、relate v3.2、solve v3.2、breakdown/business/speak 改进。shared-rules.md 抽取。 | 2026-06-15 |
 | v3.2 | 7 个子 Skill 升级至 v3.1，save v3.2（记忆时效分层），主入口 v2.13 | 2026-06 |
 | v3.1 | save v3.1 记忆时效分层（永久/周期/一次性） | 2026-06 |
@@ -183,7 +204,28 @@ MIT License
 
 TaxueSkills turns fuzzy, overwhelming questions into executable actions. Instead of giving you generic advice, it routes your problem to the right cognitive tool—whether you need to think through a decision, break down a complex task, write better content, or navigate a difficult conversation.
 
-**Latest release: v3.4** (2026-07-06) — Main entry slimming + routing accuracy optimization.
+**Latest release: v3.4.1** (2026-07-12) — Main entry slimming + routing accuracy optimization.
+
+### v3.4.1 Update
+
+#### Main Entry Rewrite (Deduction Engine)
+
+- **taxue upgraded from router to decision trigger**: Core positioning changed from "routing only" to a first-principles framework of "Goal + Constraint + Scheduling"
+- **Deduction engine replaces fixed templates**: No longer relies on fixed sentence patterns. Language freely organized based on context each time. Like an expert viewing from multiple angles without labeling perspectives
+- **Tacit knowledge first**: Don't ask what you can deduce yourself. Every question must serve to narrow the judgment, not just collect information
+- **Seamless combo chaining**: Ending naturally flows into the next leg of the journey. Command reference woven in sentences. No standalone recommendation paragraphs, no routing exposure
+- **Forward navigation, no looping back**: After judgment, move forward. No multiple-choice menus. User will speak up if they want to turn
+
+#### Speaking Rules Optimization
+
+- Removed fixed output format templates ("run /xxx first" type mechanical phrasing)
+- New principle: Conversations don't pause at "waiting for choice"; no internal structure exposure (perspective A/B/C headers)
+- New principle: One person viewing from multiple angles, output flows naturally without sectioning
+
+#### DO NOT Section Enhanced
+
+- Don't wait for choice — after judgment, move forward, never ask "which one do you want"
+- Don't expose internal structure — no visible section headers
 
 ### v3.4 Changelog
 
@@ -327,7 +369,7 @@ cp -r temp/taxue* . && rm -rf temp
 
 | Version | Highlights | Date |
 |---------|-----------|------|
-| **v3.4** | Main entry slimming (193→118 lines, tokens halved). 4 sub-skill descriptions received trigger words, benchmark Top-1 90.2%→100%. patterns.md grep precision. | 2026-07-06 |
+| **v3.4.1** | Main entry slimming (193→118 lines, tokens halved). 4 sub-skill descriptions received trigger words, benchmark Top-1 90.2%→100%. patterns.md grep precision. | 2026-07-06 |
 | **v3.3** | Routing optimization (pseudo-question + vague input detection). 7 sub-skill upgrades: insight v3.0 (4-perspective routing), roundtable v3.1 (multi-mode engine), relate v3.2, solve v3.2, breakup/business/speak improvements. shared-rules.md extracted. | 2026-06-15 |
 | v3.2 | 7 sub-skills to v3.1, save v3.2 (memory tiering), main router v2.13, conflict resolution refinement | 2026-06 |
 | v3.1 | save v3.1 memory tiering (permanent/periodic/one-shot), patterns.md half-life fields | 2026-06 |
