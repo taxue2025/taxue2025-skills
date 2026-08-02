@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## misc/meme-interpreter v1.1（2026-08-02）
+
+### 数据源扩展与查询稳健性
+
+- **新增三个高价值数据源**：百度百科（`zh`）、中文维基百科（`wiki`）、热榜聚合（`hot`：B站 + 百度 + 头条）。
+- **`all` 路由升级**：中文词并行查 itotii + 百度百科 + 中文维基；英文词仍查 Urban Dictionary + Know Your Meme。
+- **限流与错误处理**：百度百科 errno 限流内置重试，失败不写缓存；维基 429 退避重试 + 可识别 UA；`render` 兼容 error dict，不再因结构错误崩溃。
+- **输出清理**：百科卡片与词条摘要统一去 HTML 标签、解码实体。
+- **文档同步**：SKILL.md CLI 说明、README misc 段与本地 `.agents/skills` 三处对齐。
+
+---
+
 ## v3.4（2026-07-06）
 
 ### 路由性能优化（主入口瘦身）

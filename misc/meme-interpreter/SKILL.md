@@ -99,13 +99,16 @@ description: |
 
 ### 内置查询 CLI（优先）
 
-先 cd 到本 skill 目录（misc/meme-interpreter/），再运行 `python3 scripts/meme_search.py <cmd> <query>`：
+先 cd 到本 skill 目录，再运行 `python3 scripts/meme_search.py <cmd> <query>`：
 
-- `all <词>`：聚合查询，自动按字符类型路由。中文词查 itotii 梗百科，英文词查 Urban Dictionary 加 Know Your Meme。
+- `all <词>`：聚合查询，自动按字符类型路由。中文词并行查 itotii 梗百科 + 百度百科 + 中文维基；英文词并行查 Urban Dictionary + Know Your Meme。
 - `geng <词>`：itotii 梗百科，中文流行语释义与溯源，含起源、用法、例句。
+- `zh <词>`：百度百科结构化卡片，覆盖已进入大众视野的梗。接口有间歇限流，脚本内置重试。
+- `wiki <词>`：中文维基百科，权威词条摘要，补 itotii 查不到的冷门词。
 - `ud <词>`：Urban Dictionary，英文俚语定义、例句、收录日期。
 - `kym <词>`：Know Your Meme，英文 meme 词条溯源，含作者与条目链接。
-- `cache-clear`：清空缓存。内置缓存 TTL 6 小时，梗词条更新慢，无需手动清理。
+- `hot`：热榜聚合（B站热搜 + 百度热搜 + 今日头条热榜），用于判断「正在出圈的梗」与出圈背景事件。无需 query。
+- `cache-clear`：清空缓存。词条缓存 TTL 6 小时，热榜缓存 TTL 10 分钟。失败与限流结果不写缓存。
 
 ### 查询时机
 
@@ -119,8 +122,8 @@ CLI 直查不到，或需要更全的考据时，用「站点名 + 梗名」组�
 
 - 中文网络梗、ACG 梗：萌娘百科（zh.moegirl.org.cn），收录最全、考据最细。其 API 已关闭，只能通过 web_search 定向访问。
 - 需要深度考据：知乎「XX 是什么梗」的高赞回答；环境有 /zhihu skill 时优先用它直查。
-- 已进入大众视野的梗：百度百科词条，注意质量参差，必须交叉验证。
-- 新梗传播验证：在微博、B站、小红书、抖音搜梗名，看互动量与出现时间，判断真实传播阶段。
+- 已进入大众视野的梗：优先 `zh` 直查百度百科卡片；CLI 限流或卡片过简时再用 web_search 交叉验证，百科质量参差，不能单源定论。
+- 新梗传播验证：先跑 `hot` 看 B站/百度/头条是否上榜；必要时在微博、小红书、抖音搜梗名，看互动量与出现时间。
 - 趋势判断：中文用微信指数，英文用 Google Trends，均无公开 API，用 web_search 查间接数据辅助判定生命周期，只作参考信号。
 
 ### 交叉验证与查不到时
