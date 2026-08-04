@@ -29,17 +29,24 @@
 
 央企官网招聘专栏：中国移动 `job.10086.cn`、中国电信、中国建筑等。
 
-## C：综合招聘平台
+## C：综合招聘平台（商业）
 
-| 平台 | 网址 | 适用 |
-|------|------|------|
-| BOSS 直聘 | `zhipin.com` | 互联网/科技/民企，直聊模式 |
-| 智联招聘 | `zhaopin.com` | 国企/央企/大型企业/校招 |
-| 前程无忧/51job | `51job.com` | 制造业/中小企业/二三线 |
-| 猎聘 | `liepin.com` | 中高端/外企/高薪民企 |
-| 脉脉 | `maimai.cn` | 职场社交/内推/薪资透明 |
-| 58 同城 | `58.com` | 蓝领/服务类/基层 |
-| 易直聘 | 2026 新晋 | AI 匹配精准 |
+| 平台 | 网址 | 适用 | 搜索词模板 |
+|------|------|------|-----------|
+| BOSS 直聘 | `zhipin.com` | 互联网/科技/民企，直聊模式 | `site:zhipin.com {岗位} {城市} {经验}` |
+| 智联招聘 | `zhaopin.com` | 国企/央企/大型企业/校招 | `site:zhaopin.com {岗位} {城市}` |
+| 前程无忧/51job | `51job.com` | 制造业/中小企业/二三线 | `site:51job.com {岗位} {城市}` |
+| 猎聘 | `liepin.com` | 中高端/外企/高薪民企 | `site:liepin.com {岗位} {城市}` |
+| 拉勾网 | `lagou.com` | 互联网垂直，创业公司多 | `site:lagou.com {岗位} {城市}` |
+| 脉脉 | `maimai.cn` | 职场社交/内推/薪资透明 | `site:maimai.cn {公司} 招聘` |
+| 牛客网 | `nowcoder.com` | 面经/校招/内推信息 | `site:nowcoder.com {公司} {岗位} 面经` |
+| LinkedIn | `linkedin.com` | 外企/跨国/中高端 | `site:linkedin.com {岗位} {城市}` |
+
+**搜索词组合技巧：**
+- 搜特定公司：`site:zhipin.com 字节跳动 后端开发`
+- 搜薪资范围：`site:zhipin.com {岗位} {城市} 30K`
+- 搜远程岗位：`site:zhipin.com {岗位} 远程` 或 `site:eleduck.com {岗位}`
+- 搜内推：`site:nowcoder.com {公司} 内推` 或 `site:maimai.cn {公司} 内推`
 
 ## D：外企专项平台
 

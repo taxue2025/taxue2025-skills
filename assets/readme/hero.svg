@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">TaxueSkills</title>
+  <desc id="desc">踏雪决策系统：从模糊问题走到可执行行动。夜色雪径，路径上七步职业链路。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0F14"/>
+      <stop offset="100%" stop-color="#121A22"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8EC8D6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8EC8D6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8EC8D6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" rx="26" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="358" rx="25" fill="none" stroke="#3D5A66" stroke-opacity="0.45"/>
+
+  <!-- soft trail glow -->
+  <path d="M720 280 C820 240 900 200 1040 160" fill="none" stroke="url(#glow)" stroke-width="28" stroke-linecap="round"/>
+
+  <!-- left title block -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#F4F1EA">
+    <text x="56" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8EC8D6" letter-spacing="3">TAXUE · DECISION SYSTEM</text>
+    <text x="56" y="140" font-size="54" font-weight="700">TaxueSkills</text>
+    <text x="56" y="188" font-size="22" fill="#C9C4B8">让 AI 不只回答问题，而是帮你做决策</text>
+    <text x="56" y="228" font-size="18" fill="#8B919A">26 个 Skill · 消解 → 判断 → 行动 · 职业产出层已就绪</text>
+  </g>
+
+  <!-- version pill -->
+  <g transform="translate(56 268)">
+    <rect width="118" height="36" rx="18" fill="#1A2730" stroke="#3D5A66"/>
+    <text x="59" y="24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#8EC8D6">v3.4.2</text>
+  </g>
+  <g transform="translate(186 268)">
+    <rect width="168" height="36" rx="18" fill="#1A2730" stroke="#3D5A66"/>
+    <text x="84" y="24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#C9C4B8">career 3.1.0</text>
+  </g>
+
+  <!-- right: snow trail + decision nodes -->
+  <g transform="translate(700 48)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="0" y="18" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8B919A" letter-spacing="2">CAREER PATH</text>
+
+    <!-- vertical path line -->
+    <line x1="18" y1="40" x2="18" y2="280" stroke="#3D5A66" stroke-width="2"/>
+
+    <!-- nodes -->
+    <g fill="#0B0F14" stroke="#8EC8D6" stroke-width="2">
+      <circle cx="18" cy="52" r="7"/>
+      <circle cx="18" cy="96" r="7"/>
+      <circle cx="18" cy="140" r="7"/>
+      <circle cx="18" cy="184" r="7"/>
+      <circle cx="18" cy="228" r="7"/>
+      <circle cx="18" cy="272" r="7"/>
+    </g>
+    <!-- active node fill -->
+    <circle cx="18" cy="140" r="4" fill="#8EC8D6"/>
+
+    <g font-size="16" fill="#F4F1EA">
+      <text x="42" y="58">direction 方向</text>
+      <text x="42" y="102">resume 母版→HTML/PDF</text>
+      <text x="42" y="146" fill="#8EC8D6">channel 精准投递</text>
+      <text x="42" y="190">interview 模拟面试</text>
+      <text x="42" y="234">offer 谈判决策</text>
+      <text x="42" y="278">onboard 前 90 天</text>
+    </g>
+  </g>
+</svg>

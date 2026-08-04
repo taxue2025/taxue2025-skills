@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v3.4.2（2026-08-04）
+
+### 求职系列全量同步（家族 3.1.0）
+
+- **版本策略**：`taxue-career` 及 7 个子技能统一 **3.1.0**；`taxue-job-search` 保持 **2.2**；包版本 **3.4.2**。本地 career 3.6.x 内容并入 3.1.0 发布线，不单独以 3.6 号对外。
+- **taxue-career-resume 产出层**：
+  - `assets/master-template.json`、`assets/resume-template.html`（A4、零 CDN、打印友好）
+  - `scripts/render_resume.py`：母版 + custom → `resume.html` + ATS `resume.txt` + 页数估算
+  - `scripts/jd_resume_match.py`：硬门槛 / 技能覆盖 / 量化 / 匹配分
+  - `references/master-versioning.md`：工作区目录、版本不可变、维护禁忌
+- **主入口 taxue-career**：纯路由 + 求职者/HR 身份切换 + 8 人群 / 8 行业策略 + 量化闭环检查点
+- **子技能整目录发布**：direction / channel / interview / offer / onboard / fail 的 references、scripts 从单文件 SKILL 升级为完整树
+- **文档**：README 视觉刷新（`assets/readme/hero.svg`、`career-pipeline.svg`、DESIGN.md）；`docs/skill-usage-guide.md` 版本表对齐
+
+### 范围外
+
+- `taxue/` 主入口路由引擎本版不改
+
+---
+
 ## misc/meme-interpreter v1.1（2026-08-02）
 
 ### 数据源扩展与查询稳健性

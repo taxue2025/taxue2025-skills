@@ -36,6 +36,15 @@
 找工作 → /taxue → taxue-career → direction → resume → channel → interview → offer → onboard
 ```
 
+### 简历产出层（taxue-career-resume v3.1.0）
+```
+建母版 master.json
+  → 按 JD 写 versions/日期_公司_岗位/custom.json
+  → python3 scripts/render_resume.py master/master.json --custom .../custom.json --out .../resume.html
+  → 浏览器打开 HTML → 打印 PDF；resume.txt 过 ATS
+  → python3 scripts/jd_resume_match.py jd.txt resume.txt
+```
+
 ## 状态管理
 
 复杂问题不会在一次会话中完成。使用存档功能：
@@ -64,17 +73,17 @@
 | taxue-relate | 关系沟通 | 「怎么谈」 | v3.2 |
 | taxue-speak | 说话练习 | 「说话紧张」 | v2.8 |
 | taxue-business | 商业判断 | 「这个生意能不能做」 | v3.1 |
-| taxue-career | 职业入口 | 「找工作」 | v2.10 |
+| taxue-career | 职业入口 | 「找工作」 | v3.1.0 |
 | taxue-save | 状态存档 | 「保存进度」 | v3.2 |
 | taxue-material | 素材管理 | 「素材库」 | v2.8 |
 | taxue-skill | Skill 工程 | 「优化skill」 | v2.8 |
 | taxue-upgrade | 版本管理 | 「升级」 | v2.8 |
 | taxue-industry | 行业认知 | 「了解XX行业」 | v1.2 |
 | taxue-job-search | 岗位搜索 | 「搜招聘」 | v2.2 |
-| taxue-career-direction | 方向诊断 | 「不知道做什么」 | v2.8 |
-| taxue-career-resume | 简历诊断 | 「帮我看看简历」 | v2.8 |
-| taxue-career-channel | 渠道策略 | 「在哪投」 | v2.8 |
-| taxue-career-interview | 面试准备 | 「面试」 | v2.8 |
-| taxue-career-offer | Offer决策 | 「选Offer」 | v2.8 |
-| taxue-career-onboard | 入职指南 | 「刚入职」 | v2.8 |
-| taxue-career-fail | 失败复盘 | 「总是被拒」 | v3.1 |
+| taxue-career-direction | 方向诊断 | 「不知道做什么」 | v3.1.0 |
+| taxue-career-resume | 简历/JD + 产出层 | 「帮我看看简历」「简历母版」 | v3.1.0 |
+| taxue-career-channel | 渠道策略 | 「在哪投」 | v3.1.0 |
+| taxue-career-interview | 面试准备 | 「面试」 | v3.1.0 |
+| taxue-career-offer | Offer决策 | 「选Offer」 | v3.1.0 |
+| taxue-career-onboard | 入职指南 | 「刚入职」 | v3.1.0 |
+| taxue-career-fail | 失败复盘 | 「总是被拒」 | v3.1.0 |

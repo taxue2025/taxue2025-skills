@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">简历产出层</title>
+  <desc id="desc">母版 master.json 派生 custom.json，渲染独立 HTML、ATS 纯文本与匹配报告，浏览器打印 PDF。</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B0F14"/>
+      <stop offset="100%" stop-color="#101820"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="280" rx="22" fill="url(#bg2)"/>
+  <rect x="1" y="1" width="1198" height="278" rx="21" fill="none" stroke="#3D5A66" stroke-opacity="0.45"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#F4F1EA">
+    <text x="48" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#8EC8D6" letter-spacing="2">TAXUE-CAREER-RESUME · PRODUCTION LAYER</text>
+    <text x="48" y="88" font-size="28" font-weight="600">一份母版，多版投递，可打印可过 ATS</text>
+  </g>
+
+  <!-- pipeline cards -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
+    <!-- card 1 -->
+    <rect x="48" y="120" width="200" height="110" rx="14" fill="#152028" stroke="#3D5A66"/>
+    <text x="148" y="160" text-anchor="middle" fill="#8EC8D6" font-size="13">01</text>
+    <text x="148" y="190" text-anchor="middle" fill="#F4F1EA" font-size="16">master.json</text>
+    <text x="148" y="214" text-anchor="middle" fill="#8B919A" font-size="13">简历母版真源</text>
+
+    <!-- arrow -->
+    <path d="M260 175 L288 175" stroke="#8EC8D6" stroke-width="2" fill="none"/>
+    <path d="M280 168 L292 175 L280 182" fill="#8EC8D6"/>
+
+    <!-- card 2 -->
+    <rect x="300" y="120" width="200" height="110" rx="14" fill="#152028" stroke="#3D5A66"/>
+    <text x="400" y="160" text-anchor="middle" fill="#8EC8D6" font-size="13">02</text>
+    <text x="400" y="190" text-anchor="middle" fill="#F4F1EA" font-size="16">custom.json</text>
+    <text x="400" y="214" text-anchor="middle" fill="#8B919A" font-size="13">按 JD 裁剪覆盖</text>
+
+    <path d="M512 175 L540 175" stroke="#8EC8D6" stroke-width="2" fill="none"/>
+    <path d="M532 168 L544 175 L532 182" fill="#8EC8D6"/>
+
+    <!-- card 3 -->
+    <rect x="552" y="120" width="220" height="110" rx="14" fill="#152028" stroke="#3D5A66"/>
+    <text x="662" y="160" text-anchor="middle" fill="#8EC8D6" font-size="13">03</text>
+    <text x="662" y="190" text-anchor="middle" fill="#F4F1EA" font-size="16">render_resume.py</text>
+    <text x="662" y="214" text-anchor="middle" fill="#8B919A" font-size="13">零 CDN 独立 HTML</text>
+
+    <path d="M784 175 L812 175" stroke="#8EC8D6" stroke-width="2" fill="none"/>
+    <path d="M804 168 L816 175 L804 182" fill="#8EC8D6"/>
+
+    <!-- card 4 outputs -->
+    <rect x="824" y="120" width="328" height="110" rx="14" fill="#1A2C34" stroke="#8EC8D6" stroke-opacity="0.55"/>
+    <text x="988" y="160" text-anchor="middle" fill="#8EC8D6" font-size="13">04 OUTPUT</text>
+    <text x="988" y="190" text-anchor="middle" fill="#F4F1EA" font-size="16">HTML · PDF · ATS .txt</text>
+    <text x="988" y="214" text-anchor="middle" fill="#8B919A" font-size="13">+ jd_resume_match 质检</text>
+  </g>
+</svg>
